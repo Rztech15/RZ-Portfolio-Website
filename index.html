@@ -1,103 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Muhammad Ramzan | Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Muhammad Ramzan | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #0a0a1a;
+    --navy2: #0f0f2a;
+    --card: #13132b;
+    --card2: #1a1a35;
+    --pink: #e040fb;
+    --purple: #7c3aed;
+    --blue: #6366f1;
+    --grad: linear-gradient(135deg, #e040fb, #7c3aed, #6366f1);
+    --grad2: linear-gradient(90deg, #e040fb, #7c3aed);
+    --text: #e2e8f0;
+    --muted: #8892a4;
+    --white: #ffffff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    overflow-x: hidden;
+  }
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  /* NAVBAR */
+  nav {
+    position: fixed; top:0; left:0; right:0;
+    z-index: 100;
+    display: flex; align-items:center; justify-content:space-between;
+    padding: 18px 6%;
+    background: rgba(10,10,26,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(124,58,237,0.15);
+  }
+  .logo {
+    font-size: 1.4rem; font-weight: 800;
+    background: var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .nav-links { display:flex; gap:2rem; }
+  .nav-links a {
+    color: var(--muted); font-size:0.9rem; font-weight:500;
+    text-decoration:none; transition:color 0.2s;
+  }
+  .nav-links a:hover { color: var(--pink); }
 
-  <link rel="stylesheet" href="style.css"/>
+  /* HERO */
+  #home {
+    min-height: 100vh;
+    display: flex; align-items:center; justify-content:center;
+    padding: 120px 6% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  #home::before {
+    content:'';
+    position:absolute; top:-200px; right:-200px;
+    width:600px; height:600px;
+    background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 70%);
+    border-radius:50%;
+  }
+  #home::after {
+    content:'';
+    position:absolute; bottom:-200px; left:-200px;
+    width:500px; height:500px;
+    background: radial-gradient(circle, rgba(224,64,251,0.1) 0%, transparent 70%);
+    border-radius:50%;
+  }
+  .hero-content { text-align:center; position:relative; z-index:1; }
+  .hero-badge {
+    display:inline-block;
+    background: rgba(124,58,237,0.2);
+    border: 1px solid rgba(124,58,237,0.4);
+    border-radius:50px;
+    padding: 6px 18px;
+    font-size:0.8rem; color: var(--blue); font-weight:500;
+    margin-bottom: 1.5rem;
+    letter-spacing:0.05em;
+  }
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900; line-height:1.1;
+    margin-bottom: 1rem;
+    color: var(--white);
+  }
+  .hero-title span {
+    background: var(--grad); -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent; background-clip:text;
+  }
+  .hero-sub {
+    font-size: 1.1rem; color: var(--muted);
+    max-width: 500px; margin: 0 auto 2.5rem;
+    line-height:1.7;
+  }
+  .hero-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+  .btn-primary {
+    background: var(--grad);
+    color:#fff; border:none;
+    padding:13px 32px; border-radius:50px;
+    font-size:0.95rem; font-weight:600;
+    cursor:pointer; text-decoration:none;
+    transition: opacity 0.2s, transform 0.2s;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn-primary:hover { opacity:0.88; transform:translateY(-2px); }
+  .btn-outline {
+    background:transparent;
+    color: var(--text); border:1px solid rgba(124,58,237,0.5);
+    padding:13px 32px; border-radius:50px;
+    font-size:0.95rem; font-weight:600;
+    cursor:pointer; text-decoration:none;
+    transition: border-color 0.2s, transform 0.2s;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn-outline:hover { border-color: var(--pink); transform:translateY(-2px); }
+
+  /* SECTIONS */
+  section { padding: 100px 6%; }
+  .section-label {
+    font-size:0.75rem; font-weight:600;
+    letter-spacing:0.2em; text-transform:uppercase;
+    background: var(--grad2); -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent; background-clip:text;
+    margin-bottom:0.8rem;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight:800; color:var(--white);
+    margin-bottom: 0.8rem;
+    line-height:1.2;
+  }
+  .section-title span {
+    background: var(--grad); -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent; background-clip:text;
+  }
+  .section-sub {
+    color:var(--muted); font-size:1rem; margin-bottom:3.5rem;
+    max-width:520px;
+  }
+
+  /* ABOUT / STATS */
+  #about { background: var(--navy2); }
+  .stats-grid {
+    display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap:1.5rem; margin-bottom:3rem;
+  }
+  .stat-card {
+    background: var(--card);
+    border:1px solid rgba(124,58,237,0.2);
+    border-radius:16px; padding:2rem 1.5rem;
+    text-align:center;
+    transition:border-color 0.2s, transform 0.2s;
+  }
+  .stat-card:hover { border-color: var(--purple); transform:translateY(-4px); }
+  .stat-icon { font-size:2rem; margin-bottom:0.8rem; }
+  .stat-num {
+    font-size:2.2rem; font-weight:900;
+    background: var(--grad); -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent; background-clip:text;
+  }
+  .stat-label { color:var(--muted); font-size:0.82rem; margin-top:4px; }
+  .about-text {
+    background: var(--card);
+    border:1px solid rgba(124,58,237,0.15);
+    border-radius:16px; padding:2rem;
+    line-height:1.8; color:var(--text);
+  }
+  .edu-card {
+    display:flex; align-items:center; gap:1.2rem;
+    background: var(--card);
+    border:1px solid rgba(99,102,241,0.25);
+    border-radius:14px; padding:1.5rem;
+    margin-top:1.5rem;
+  }
+  .edu-icon {
+    width:48px; height:48px;
+    background: var(--grad);
+    border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.4rem; flex-shrink:0;
+  }
+  .edu-title { font-weight:700; color:var(--white); font-size:0.95rem; }
+  .edu-sub { color: var(--blue); font-size:0.85rem; font-weight:500; margin:2px 0; }
+  .edu-meta { color:var(--muted); font-size:0.8rem; }
+
+  /* SKILLS */
+  #skills {}
+  .skills-grid {
+    display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap:1.5rem;
+  }
+  .skill-card {
+    background: var(--card);
+    border:1px solid rgba(124,58,237,0.18);
+    border-radius:16px; padding:1.8rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .skill-card:hover { border-color: var(--purple); transform:translateY(-3px); }
+  .skill-card-header {
+    display:flex; align-items:center; gap:0.8rem;
+    margin-bottom:1.5rem;
+  }
+  .skill-card-icon {
+    width:36px; height:36px;
+    background: rgba(124,58,237,0.2);
+    border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.1rem;
+  }
+  .skill-card-title { font-weight:700; font-size:0.95rem; color:var(--white); }
+  .skill-item { margin-bottom:1rem; }
+  .skill-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; }
+  .skill-name { font-size:0.85rem; color:var(--text); }
+  .skill-pct { font-size:0.8rem; color:var(--muted); }
+  .skill-bar-bg {
+    height:6px; background:rgba(255,255,255,0.07);
+    border-radius:50px; overflow:hidden;
+  }
+  .skill-bar-fill {
+    height:100%; border-radius:50px;
+    background: var(--grad2);
+    transition: width 1s ease;
+  }
+
+  /* EXPERIENCE */
+  #experience { background: var(--navy2); }
+  .timeline { position:relative; padding-left:2rem; }
+  .timeline::before {
+    content:''; position:absolute;
+    left:8px; top:0; bottom:0; width:2px;
+    background: linear-gradient(180deg, var(--purple), transparent);
+  }
+  .timeline-item {
+    position:relative; margin-bottom:2.5rem;
+  }
+  .timeline-dot {
+    position:absolute; left:-2rem; top:6px;
+    width:16px; height:16px;
+    background: var(--grad); border-radius:50%;
+    border:2px solid var(--navy2);
+  }
+  .exp-card {
+    background: var(--card);
+    border:1px solid rgba(124,58,237,0.18);
+    border-radius:16px; padding:1.8rem;
+    transition: border-color 0.2s;
+  }
+  .exp-card:hover { border-color: var(--purple); }
+  .exp-header { display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.5rem; }
+  .exp-title { font-weight:700; color:var(--white); font-size:1rem; }
+  .exp-date {
+    font-size:0.8rem; color:var(--muted);
+    display:flex; align-items:center; gap:4px;
+  }
+  .exp-company { color:var(--blue); font-size:0.85rem; font-weight:600; margin-bottom:1rem; }
+  .exp-bullets { list-style:none; }
+  .exp-bullets li {
+    font-size:0.88rem; color:var(--text);
+    padding:4px 0 4px 1.2rem;
+    position:relative; line-height:1.6;
+  }
+  .exp-bullets li::before {
+    content:'▸'; position:absolute; left:0;
+    color:var(--pink);
+  }
+
+  /* PROJECTS */
+  #projects {}
+  .projects-grid {
+    display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap:1.5rem;
+  }
+  .proj-card {
+    background: var(--card);
+    border:1px solid rgba(124,58,237,0.18);
+    border-radius:16px; overflow:hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .proj-card:hover { border-color: var(--purple); transform:translateY(-5px); }
+  .proj-thumb {
+    height:130px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:3rem;
+    position:relative; overflow:hidden;
+  }
+  .proj-thumb-ai { background: linear-gradient(135deg,#1a1a35,#2d1b69); }
+  .proj-thumb-web { background: linear-gradient(135deg,#1a1a35,#1e3a5f); }
+  .proj-thumb-data { background: linear-gradient(135deg,#1a1a35,#2d1b3d); }
+  .proj-thumb-ml { background: linear-gradient(135deg,#1a1a35,#1b3a2d); }
+  .proj-thumb-ecom { background: linear-gradient(135deg,#1a1a35,#3a1b1b); }
+  .proj-tag {
+    position:absolute; top:10px; left:10px;
+    background:rgba(124,58,237,0.5);
+    border-radius:6px; padding:3px 10px;
+    font-size:0.7rem; font-weight:600; color:#fff;
+  }
+  .proj-body { padding:1.5rem; }
+  .proj-name { font-weight:700; color:var(--white); font-size:0.95rem; margin-bottom:0.5rem; }
+  .proj-desc { color:var(--muted); font-size:0.83rem; line-height:1.6; margin-bottom:1rem; }
+  .proj-link {
+    font-size:0.82rem; color:var(--blue); font-weight:600;
+    text-decoration:none; display:inline-flex; align-items:center; gap:4px;
+    transition:color 0.2s;
+  }
+  .proj-link:hover { color:var(--pink); }
+
+  /* CONTACT */
+  #contact { background: var(--navy2); }
+  .contact-wrap {
+    display:grid; grid-template-columns:1fr 1.4fr; gap:3rem;
+    align-items:start;
+  }
+  .contact-info-list { display:flex; flex-direction:column; gap:1rem; margin-top:1rem; }
+  .contact-info-item {
+    display:flex; align-items:center; gap:1rem;
+    background: var(--card);
+    border:1px solid rgba(124,58,237,0.15);
+    border-radius:12px; padding:1rem 1.2rem;
+  }
+  .contact-info-icon {
+    width:36px; height:36px;
+    background: rgba(124,58,237,0.2);
+    border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1rem; flex-shrink:0;
+  }
+  .contact-info-label { font-size:0.72rem; color:var(--muted); }
+  .contact-info-val { font-size:0.88rem; color:var(--text); font-weight:500; }
+  .social-links { display:flex; gap:0.8rem; margin-top:1.5rem; }
+  .social-btn {
+    width:40px; height:40px;
+    background: var(--card);
+    border:1px solid rgba(124,58,237,0.25);
+    border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1rem; cursor:pointer;
+    text-decoration:none;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .social-btn:hover { border-color:var(--pink); transform:translateY(-2px); }
+  .contact-form { display:flex; flex-direction:column; gap:1rem; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .form-group { display:flex; flex-direction:column; gap:6px; }
+  .form-group label { font-size:0.82rem; color:var(--muted); font-weight:500; }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: var(--card);
+    border:1px solid rgba(124,58,237,0.2);
+    border-radius:10px; padding:12px 14px;
+    color:var(--text); font-size:0.88rem;
+    font-family:'Inter',sans-serif;
+    transition:border-color 0.2s;
+    resize:vertical;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline:none; border-color:var(--purple);
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color:rgba(136,146,164,0.5); }
+  .form-submit {
+    background: var(--grad);
+    color:#fff; border:none;
+    padding:14px; border-radius:50px;
+    font-size:0.95rem; font-weight:600;
+    cursor:pointer;
+    transition:opacity 0.2s, transform 0.2s;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+  }
+  .form-submit:hover { opacity:0.88; transform:translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    text-align:center; padding:2.5rem 6%;
+    color:var(--muted); font-size:0.85rem;
+    border-top:1px solid rgba(124,58,237,0.1);
+  }
+  footer span {
+    background: var(--grad2); -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent; background-clip:text;
+    font-weight:600;
+  }
+
+  /* RESPONSIVE */
+  @media(max-width:768px) {
+    .nav-links { gap:1rem; }
+    .contact-wrap { grid-template-columns:1fr; }
+    .form-row { grid-template-columns:1fr; }
+    section { padding:70px 5%; }
+  }
+  @media(max-width:480px) {
+    .nav-links { display:none; }
+  }
+</style>
 </head>
-
 <body>
 
-<div class="bg"></div>
-
-<header>
-  <div class="logo">Ramzan.dev</div>
-  <nav>
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">Ramzan.</div>
+  <div class="nav-links">
+    <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
-  </nav>
-</header>
+  </div>
+</nav>
 
-<section class="hero">
-  <div class="glass-card">
-    <h1>Muhammad Ramzan</h1>
-    <h3>Mathematics Student | Web Developer | Data Analyst</h3>
-    <p>Building elegant web experiences and data-driven solutions.</p>
-    <a href="#projects" class="btn">View Projects</a>
+<!-- HERO -->
+<section id="home">
+  <div class="hero-content">
+    <div class="hero-badge">👑 Mathematics × AI × Data</div>
+    <h1 class="hero-title">
+      Muhammad<br><span>Ramzan</span>
+    </h1>
+    <p class="hero-sub">
+      BS Mathematics student building AI-powered solutions, data-driven apps, and intelligent systems.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">🚀 View Projects</a>
+      <a href="#contact" class="btn-outline">📬 Contact Me</a>
+    </div>
   </div>
 </section>
 
-<section id="about" class="section">
-  <h2>About Me</h2>
-  <p>
-    I am Muhammad Ramzan, a Mathematics student at Bahauddin Zakariya University, Multan.
-    Currently in my 5th semester, I am learning Web Development, Data Analysis, and Machine Learning basics.
-    I enjoy building real-world projects that combine logic, data, and creativity.
-  </p>
-</section>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">ABOUT ME</div>
+  <h2 class="section-title">By The <span>Numbers</span></h2>
+  <p class="section-sub">Mathematics meets technology — building real-world solutions.</p>
 
-<section id="skills" class="section">
-  <h2>Skills</h2>
-  <div class="grid">
-    <div class="card">HTML</div>
-    <div class="card">CSS</div>
-    <div class="card">JavaScript</div>
-    <div class="card">Git & GitHub</div>
-    <div class="card">Excel</div>
-    <div class="card">Data Analysis</div>
-    <div class="card">Machine Learning</div>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon">🤖</div>
+      <div class="stat-num">2+</div>
+      <div class="stat-label">AI Projects Built</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">📊</div>
+      <div class="stat-num">5+</div>
+      <div class="stat-label">Data Projects</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">📚</div>
+      <div class="stat-num">4th</div>
+      <div class="stat-label">Semester @ BZU</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">💻</div>
+      <div class="stat-num">8+</div>
+      <div class="stat-label">Technologies</div>
+    </div>
+  </div>
+
+  <div class="about-text">
+    I'm <strong>Muhammad Ramzan</strong>, a Mathematics student at CASPAM, Bahauddin Zakariya University Multan (Roll No. BSM-24-66). I combine mathematical thinking with AI and web development to build impactful projects. From virtual assistants to data analysis dashboards, I love turning complex ideas into elegant solutions.
+  </div>
+
+  <div class="edu-card">
+    <div class="edu-icon">🎓</div>
+    <div>
+      <div class="edu-title">Bachelor of Science in Mathematics</div>
+      <div class="edu-sub">CASPAM — Bahauddin Zakariya University, Multan</div>
+      <div class="edu-meta">📅 2024 – Present &nbsp;|&nbsp; 📍 Multan, Pakistan</div>
+    </div>
   </div>
 </section>
 
-<section id="projects" class="section">
-  <h2>Projects</h2>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">MY ARSENAL</div>
+  <h2 class="section-title">Skills & <span>Technologies</span></h2>
+  <p class="section-sub">Tools I use to craft data-driven and AI-powered solutions.</p>
 
-  <div class="grid">
+  <div class="skills-grid">
 
-    <a class="card" href="https://github.com/Rztech15" target="_blank">
-      <h3>Ecommerce Website</h3>
-      <p>Modern responsive shopping web app.</p>
-    </a>
+    <div class="skill-card">
+      <div class="skill-card-header">
+        <div class="skill-card-icon">💻</div>
+        <div class="skill-card-title">Programming</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">Python</span><span class="skill-pct">75%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">JavaScript</span><span class="skill-pct">70%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:70%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">HTML / CSS</span><span class="skill-pct">80%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:80%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">React</span><span class="skill-pct">65%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:65%"></div></div>
+      </div>
+    </div>
 
-    <a class="card" href="https://github.com/Rztech15" target="_blank">
-      <h3>Portfolio Website</h3>
-      <p>Personal developer portfolio project.</p>
-    </a>
+    <div class="skill-card">
+      <div class="skill-card-header">
+        <div class="skill-card-icon">🤖</div>
+        <div class="skill-card-title">AI & Data</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">Machine Learning</span><span class="skill-pct">65%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:65%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">Data Analysis (pandas/numpy)</span><span class="skill-pct">75%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">Streamlit</span><span class="skill-pct">60%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:60%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">Excel / Statistics</span><span class="skill-pct">80%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:80%"></div></div>
+      </div>
+    </div>
 
-    <a class="card" href="https://github.com/Rztech15" target="_blank">
-      <h3>Student Performance Analysis</h3>
-      <p>Data analysis of student results.</p>
-    </a>
-
-    <a class="card" href="https://github.com/Rztech15" target="_blank">
-      <h3>Pakistan Companies Analysis</h3>
-      <p>Business data insights project.</p>
-    </a>
-
-    <a class="card" href="https://github.com/Rztech15" target="_blank">
-      <h3>Linear Regression Model</h3>
-      <p>ML model for predicting student marks.</p>
-    </a>
+    <div class="skill-card">
+      <div class="skill-card-header">
+        <div class="skill-card-icon">🔧</div>
+        <div class="skill-card-title">Tools & Math</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">Git & GitHub</span><span class="skill-pct">70%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:70%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">Numerical Analysis</span><span class="skill-pct">72%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:72%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">Mathematical Statistics</span><span class="skill-pct">78%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:78%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-row"><span class="skill-name">Netlify / GitHub Pages</span><span class="skill-pct">75%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div>
+      </div>
+    </div>
 
   </div>
 </section>
 
-<section id="contact" class="section">
-  <h2>Contact</h2>
-  <p>WhatsApp: 0320-7895540</p>
-  <a class="btn" href="https://github.com/Rztech15" target="_blank">GitHub Profile</a>
-</section>
-
-<footer>
-  © 2026 Muhammad Ramzan | Premium Portfolio ✨
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">EXPER
