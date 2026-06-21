@@ -57,11 +57,12 @@ nav a:hover{
   padding:40px;
 }
 
-/* HERO CONTAINER */
+/* HERO CONTAINER (IMPORTANT FIX HERE) */
 .hero-content{
   width:100%;
   max-width:1200px;
   display:flex;
+  flex-direction:row;      /* FORCE ROW */
   align-items:center;
   justify-content:space-between;
   gap:60px;
@@ -70,20 +71,16 @@ nav a:hover{
 /* LEFT TEXT */
 .hero-text{
   flex:1;
+  order:1;
 }
 
-/* RIGHT IMAGE */
+/* RIGHT IMAGE (FORCED RIGHT SIDE) */
 .hero-image{
   flex:1;
-  display:flex;
-  justify-content:center;
-
-  /* ⭐ IMPORTANT FIX (ensures right side) */
   order:2;
-}
-
-.hero-text{
-  order:1;
+  display:flex;
+  justify-content:flex-end;   /* PUSH IMAGE RIGHT */
+  align-items:center;
 }
 
 /* BADGE */
@@ -128,7 +125,7 @@ nav a:hover{
   transform:scale(1.05);
 }
 
-/* PROFILE IMAGE */
+/* PROFILE IMAGE (IMPORTANT FIX) */
 .profile-img{
   width:320px;
   height:320px;
@@ -137,6 +134,7 @@ nav a:hover{
   border:4px solid #00c8ff;
   box-shadow:0 0 60px rgba(0,200,255,0.5);
   transition:0.4s;
+  display:block;
 }
 
 .profile-img:hover{
@@ -188,13 +186,21 @@ footer{
 @media(max-width:768px){
 
 .hero-content{
-  flex-direction:column-reverse;
+  flex-direction:column;
   text-align:center;
+}
+
+.hero-image{
+  justify-content:center;
+  order:1;
+}
+
+.hero-text{
+  order:2;
 }
 
 .profile-img{
   width:250px;
-  height:250px;
   height:250px;
 }
 
