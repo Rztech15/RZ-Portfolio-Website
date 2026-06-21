@@ -1,830 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Muhammad Ramzan | Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-<style>
-  :root {
-    --navy: #0a0a1a;
-    --navy2: #0f0f2a;
-    --card: #13132b;
-    --card2: #1a1a35;
-    --pink: #e040fb;
-    --purple: #7c3aed;
-    --blue: #6366f1;
-    --grad: linear-gradient(135deg, #e040fb, #7c3aed, #6366f1);
-    --grad2: linear-gradient(90deg, #e040fb, #7c3aed);
-    --text: #e2e8f0;
-    --muted: #8892a4;
-    --white: #ffffff;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--navy);
-    color: var(--text);
-    overflow-x: hidden;
-  }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M Ramzan Portfolio</title>
 
-  /* NAVBAR */
-  nav {
-    position: fixed; top:0; left:0; right:0;
-    z-index: 100;
-    display: flex; align-items:center; justify-content:space-between;
-    padding: 18px 6%;
-    background: rgba(10,10,26,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(124,58,237,0.15);
-  }
-  .logo {
-    font-size: 1.4rem; font-weight: 800;
-    background: var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-    background-clip:text;
-  }
-  .nav-links { display:flex; gap:1.8rem; align-items:center; }
-  .nav-links a {
-    color: var(--muted); font-size:0.88rem; font-weight:500;
-    text-decoration:none; transition:color 0.2s;
-  }
-  .nav-links a:hover { color: var(--pink); }
-  .nav-cv {
-    background: var(--grad);
-    color:#fff !important; padding:8px 20px;
-    border-radius:50px; font-size:0.85rem !important;
-    font-weight:600 !important;
-    transition: opacity 0.2s !important;
-  }
-  .nav-cv:hover { opacity:0.85; }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  /* HERO */
-  #home {
-    min-height: 100vh;
-    display: flex; align-items:center; justify-content:center;
-    padding: 120px 6% 80px;
-    position: relative; overflow: hidden;
-  }
-  #home::before {
-    content:''; position:absolute; top:-200px; right:-200px;
-    width:600px; height:600px;
-    background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 70%);
-    border-radius:50%;
-  }
-  #home::after {
-    content:''; position:absolute; bottom:-200px; left:-200px;
-    width:500px; height:500px;
-    background: radial-gradient(circle, rgba(224,64,251,0.1) 0%, transparent 70%);
-    border-radius:50%;
-  }
-  .hero-content { text-align:center; position:relative; z-index:1; max-width:700px; }
-  .hero-badge {
-    display:inline-block;
-    background: rgba(124,58,237,0.2);
-    border: 1px solid rgba(124,58,237,0.4);
-    border-radius:50px; padding: 6px 18px;
-    font-size:0.8rem; color: var(--blue); font-weight:500;
-    margin-bottom: 1.5rem; letter-spacing:0.05em;
-  }
-  .hero-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 900; line-height:1.1;
-    margin-bottom: 0.5rem; color: var(--white);
-  }
-  .hero-title span {
-    background: var(--grad); -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent; background-clip:text;
-  }
-  .hero-role {
-    font-size:1.15rem; font-weight:600;
-    background: var(--grad2); -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent; background-clip:text;
-    margin-bottom:1rem;
-  }
-  .hero-sub {
-    font-size:1rem; color: var(--muted);
-    max-width:520px; margin: 0 auto 2.5rem;
-    line-height:1.8;
-  }
-  .hero-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
-  .btn-primary {
-    background: var(--grad); color:#fff; border:none;
-    padding:13px 32px; border-radius:50px;
-    font-size:0.95rem; font-weight:600;
-    cursor:pointer; text-decoration:none;
-    transition: opacity 0.2s, transform 0.2s;
-    display:inline-flex; align-items:center; gap:8px;
-    box-shadow: 0 0 20px rgba(124,58,237,0.4);
-  }
-  .btn-primary:hover { opacity:0.88; transform:translateY(-2px); }
-  .btn-outline {
-    background:transparent; color: var(--text);
-    border:1px solid rgba(124,58,237,0.5);
-    padding:13px 32px; border-radius:50px;
-    font-size:0.95rem; font-weight:600;
-    cursor:pointer; text-decoration:none;
-    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    display:inline-flex; align-items:center; gap:8px;
-  }
-  .btn-outline:hover { border-color: var(--pink); transform:translateY(-2px); box-shadow: 0 0 15px rgba(224,64,251,0.2); }
-
-  
-.profile-img{
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid #7c3aed;
-  margin-bottom:25px;
-  box-shadow:0 0 30px rgba(124,58,237,.4);
-}
-
-
-  /* SECTIONS */
-  section { padding: 100px 6%; }
-  .section-label {
-    font-size:0.75rem; font-weight:600;
-    letter-spacing:0.2em; text-transform:uppercase;
-    background: var(--grad2); -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent; background-clip:text;
-    margin-bottom:0.8rem;
-  }
-  .section-title {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight:800; color:var(--white);
-    margin-bottom: 0.8rem; line-height:1.2;
-  }
-  .section-title span {
-    background: var(--grad); -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent; background-clip:text;
-  }
-  .section-sub { color:var(--muted); font-size:1rem; margin-bottom:3.5rem; max-width:520px; }
-
-  /* ABOUT */
-  #about { background: var(--navy2); }
-  .stats-grid {
-    display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap:1.5rem; margin-bottom:2.5rem;
-  }
-  .stat-card {
-    background: var(--card);
-    border:1px solid rgba(124,58,237,0.2);
-    border-radius:16px; padding:2rem 1.5rem; text-align:center;
-    transition:border-color 0.2s, transform 0.2s;
-  }
-  .stat-card:hover { border-color: var(--purple); transform:translateY(-4px); }
-  .stat-icon { font-size:2rem; margin-bottom:0.8rem; }
-  .stat-num {
-    font-size:2.2rem; font-weight:900;
-    background: var(--grad); -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent; background-clip:text;
-  }
-  .stat-label { color:var(--muted); font-size:0.82rem; margin-top:4px; }
-  .about-text {
-    background: var(--card);
-    border:1px solid rgba(124,58,237,0.15);
-    border-radius:16px; padding:2rem;
-    line-height:1.9; color:var(--text); margin-bottom:1.5rem;
-    font-size:0.95rem;
-  }
-  .edu-card {
-    display:flex; align-items:center; gap:1.2rem;
-    background: var(--card);
-    border:1px solid rgba(99,102,241,0.25);
-    border-radius:14px; padding:1.5rem;
-  }
-  .edu-icon {
-    width:48px; height:48px; background: var(--grad);
-    border-radius:12px;
-    display:flex; align-items:center; justify-content:center;
-    font-size:1.4rem; flex-shrink:0;
-  }
-  .edu-title { font-weight:700; color:var(--white); font-size:0.95rem; }
-  .edu-sub { color: var(--blue); font-size:0.85rem; font-weight:500; margin:2px 0; }
-  .edu-meta { color:var(--muted); font-size:0.8rem; }
-
-  /* SKILLS */
-  .skills-grid {
-    display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap:1.5rem;
-  }
-  .skill-card {
-    background: var(--card);
-    border:1px solid rgba(124,58,237,0.18);
-    border-radius:16px; padding:1.8rem;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-  .skill-card:hover { border-color: var(--purple); transform:translateY(-3px); }
-  .skill-card-header {
-    display:flex; align-items:center; gap:0.8rem; margin-bottom:1.5rem;
-  }
-  .skill-card-icon {
-    width:36px; height:36px; background: rgba(124,58,237,0.2);
-    border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem;
-  }
-  .skill-card-title { font-weight:700; font-size:0.95rem; color:var(--white); }
-  .skill-item { margin-bottom:1rem; }
-  .skill-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; }
-  .skill-name { font-size:0.85rem; color:var(--text); }
-  .skill-pct { font-size:0.8rem; color:var(--muted); }
-  .skill-bar-bg { height:6px; background:rgba(255,255,255,0.07); border-radius:50px; overflow:hidden; }
-  .skill-bar-fill { height:100%; border-radius:50px; background: var(--grad2); }
-
-  /* EXPERIENCE */
-  #experience { background: var(--navy2); }
-  .timeline { position:relative; padding-left:2rem; }
-  .timeline::before {
-    content:''; position:absolute; left:8px; top:0; bottom:0; width:2px;
-    background: linear-gradient(180deg, var(--purple), transparent);
-  }
-  .timeline-item { position:relative; margin-bottom:2.5rem; }
-  .timeline-dot {
-    position:absolute; left:-2rem; top:6px;
-    width:16px; height:16px;
-    background: var(--grad); border-radius:50%; border:2px solid var(--navy2);
-  }
-  .exp-card {
-    background: var(--card); border:1px solid rgba(124,58,237,0.18);
-    border-radius:16px; padding:1.8rem; transition: border-color 0.2s, transform 0.2s;
-  }
-  .exp-card:hover { border-color: var(--purple); transform:translateY(-2px); }
-  .exp-header { display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.5rem; }
-  .exp-title { font-weight:700; color:var(--white); font-size:1rem; }
-  .exp-date { font-size:0.8rem; color:var(--muted); display:flex; align-items:center; gap:4px; }
-  .exp-company { color:var(--blue); font-size:0.85rem; font-weight:600; margin-bottom:1rem; }
-  .exp-bullets { list-style:none; }
-  .exp-bullets li {
-    font-size:0.88rem; color:var(--text);
-    padding:4px 0 4px 1.2rem; position:relative; line-height:1.6;
-  }
-  .exp-bullets li::before { content:'▸'; position:absolute; left:0; color:var(--pink); }
-
-  /* PROJECTS */
-  .projects-grid {
-    display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-    gap:1.5rem;
-  }
-  .proj-card {
-    background: var(--card); border:1px solid rgba(124,58,237,0.18);
-    border-radius:16px; overflow:hidden;
-    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-  }
-  .proj-card:hover { border-color: var(--purple); transform:translateY(-5px); box-shadow: 0 10px 30px rgba(124,58,237,0.15); }
-  .proj-thumb {
-    height:130px; display:flex; align-items:center; justify-content:center;
-    font-size:3rem; position:relative; overflow:hidden;
-  }
-  .proj-thumb-ai { background: linear-gradient(135deg,#1a1a35,#2d1b69); }
-  .proj-thumb-web { background: linear-gradient(135deg,#1a1a35,#1e3a5f); }
-  .proj-thumb-data { background: linear-gradient(135deg,#1a1a35,#2d1b3d); }
-  .proj-thumb-ml { background: linear-gradient(135deg,#1a1a35,#1b3a2d); }
-  .proj-thumb-ecom { background: linear-gradient(135deg,#1a1a35,#3a1b1b); }
-  .proj-tag {
-    position:absolute; top:10px; left:10px;
-    background:rgba(124,58,237,0.5); border-radius:6px;
-    padding:3px 10px; font-size:0.7rem; font-weight:600; color:#fff;
-  }
-  .proj-body { padding:1.5rem; }
-  .proj-name { font-weight:700; color:var(--white); font-size:0.95rem; margin-bottom:0.4rem; }
-  .proj-tools { font-size:0.75rem; color:var(--purple); font-weight:600; margin-bottom:0.5rem; }
-  .proj-desc { color:var(--muted); font-size:0.83rem; line-height:1.6; margin-bottom:1rem; }
-  .proj-links { display:flex; gap:1rem; }
-  .proj-link {
-    font-size:0.82rem; color:var(--blue); font-weight:600;
-    text-decoration:none; display:inline-flex; align-items:center; gap:4px;
-    transition:color 0.2s;
-  }
-  .proj-link:hover { color:var(--pink); }
-
-  /* CERTIFICATES */
-  #certificates { background: var(--navy2); }
-  .cert-grid {
-    display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-    gap:1.5rem;
-  }
-  .cert-card {
-    background: var(--card); border:1px solid rgba(124,58,237,0.18);
-    border-radius:16px; padding:1.8rem;
-    transition: border-color 0.2s, transform 0.2s;
-    display:flex; gap:1rem; align-items:flex-start;
-  }
-  .cert-card:hover { border-color: var(--pink); transform:translateY(-3px); }
-  .cert-icon {
-    width:48px; height:48px; background: var(--grad);
-    border-radius:12px; display:flex; align-items:center;
-    justify-content:center; font-size:1.4rem; flex-shrink:0;
-  }
-  .cert-title { font-weight:700; color:var(--white); font-size:0.95rem; margin-bottom:0.4rem; }
-  .cert-org { color:var(--blue); font-size:0.82rem; font-weight:600; margin-bottom:0.4rem; }
-  .cert-desc { color:var(--muted); font-size:0.82rem; line-height:1.6; }
-
-  /* CONTACT */
-  #contact {}
-  .contact-wrap {
-    display:grid; grid-template-columns:1fr 1.4fr; gap:3rem; align-items:start;
-  }
-  .contact-info-list { display:flex; flex-direction:column; gap:1rem; margin-top:1rem; }
-  .contact-info-item {
-    display:flex; align-items:center; gap:1rem;
-    background: var(--card); border:1px solid rgba(124,58,237,0.15);
-    border-radius:12px; padding:1rem 1.2rem;
-    transition: border-color 0.2s;
-  }
-  .contact-info-item:hover { border-color: var(--purple); }
-  .contact-info-icon {
-    width:36px; height:36px; background: rgba(124,58,237,0.2);
-    border-radius:10px; display:flex; align-items:center; justify-content:center;
-    font-size:1rem; flex-shrink:0;
-  }
-  .contact-info-label { font-size:0.72rem; color:var(--muted); }
-  .contact-info-val { font-size:0.88rem; color:var(--text); font-weight:500; }
-  .social-links { display:flex; gap:0.8rem; margin-top:1.5rem; flex-wrap:wrap; }
-  .social-btn {
-    display:inline-flex; align-items:center; gap:8px;
-    background: var(--card); border:1px solid rgba(124,58,237,0.25);
-    border-radius:10px; padding:10px 16px;
-    font-size:0.82rem; font-weight:600; color:var(--text);
-    cursor:pointer; text-decoration:none;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-  .social-btn:hover { border-color:var(--pink); transform:translateY(-2px); }
-  .wa-btn {
-    background: var(--grad); color:#fff !important;
-    border:none !important; margin-top:1rem;
-    padding:12px 24px; border-radius:50px;
-    font-weight:600; font-size:0.9rem;
-    display:inline-flex; align-items:center; gap:8px;
-    text-decoration:none; transition: opacity 0.2s, transform 0.2s;
-    box-shadow: 0 0 20px rgba(124,58,237,0.3);
-  }
-  .wa-btn:hover { opacity:0.88; transform:translateY(-2px); }
-  .contact-form { display:flex; flex-direction:column; gap:1rem; }
-  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-  .form-group { display:flex; flex-direction:column; gap:6px; }
-  .form-group label { font-size:0.82rem; color:var(--muted); font-weight:500; }
-  .form-group input,
-  .form-group textarea {
-    background: var(--card); border:1px solid rgba(124,58,237,0.2);
-    border-radius:10px; padding:12px 14px;
-    color:var(--text); font-size:0.88rem;
-    font-family:'Inter',sans-serif; transition:border-color 0.2s; resize:vertical;
-  }
-  .form-group input:focus,
-  .form-group textarea:focus { outline:none; border-color:var(--purple); }
-  .form-group input::placeholder,
-  .form-group textarea::placeholder { color:rgba(136,146,164,0.5); }
-  .form-submit {
-    background: var(--grad); color:#fff; border:none;
-    padding:14px; border-radius:50px; font-size:0.95rem; font-weight:600;
-    cursor:pointer; transition:opacity 0.2s, transform 0.2s;
-    display:flex; align-items:center; justify-content:center; gap:8px;
-    box-shadow: 0 0 20px rgba(124,58,237,0.3);
-  }
-  .form-submit:hover { opacity:0.88; transform:translateY(-2px); }
-
-  /* FOOTER */
-  footer {
-    text-align:center; padding:2.5rem 6%;
-    color:var(--muted); font-size:0.85rem;
-    border-top:1px solid rgba(124,58,237,0.1);
-  }
-  footer span {
-    background: var(--grad2); -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent; background-clip:text; font-weight:600;
-  }
-
-  /* RESPONSIVE */
-  @media(max-width:768px) {
-    .contact-wrap { grid-template-columns:1fr; }
-    .form-row { grid-template-columns:1fr; }
-    section { padding:70px 5%; }
-    .nav-links { gap:1rem; }
-  }
-  @media(max-width:480px) {
-    .nav-links { display:none; }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <div class="logo">Ramzan.</div>
-  <div class="nav-links">
-    <a href="#home">Home</a>
+<div class="bg"></div>
+
+<header>
+  <div class="logo">M Ramzan</div>
+  <nav>
     <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
-    <a href="#certificates">Certificates</a>
+    <a href="#certs">Certificates</a>
     <a href="#contact">Contact</a>
-    <a href="Updated_M_Ramzan_CV.pdf" download class="nav-cv">📄 Download CV</a>
-  </div>
-</nav>
+  </nav>
+</header>
 
 <!-- HERO -->
-<section id="home">
-  <div class="hero-content" data-aos="fade-up">
-    <img src="Profile pic.jpeg" alt="Muhammad Ramzan" class="profile-img">\n    <div class="hero-badge">🟢 Available for Internships</div>
-    <h1 class="hero-title">Hi, I'm<br><span>Muhammad Ramzan</span></h1>
-    <p class="hero-role">Data Analyst &nbsp;|&nbsp; Python Developer &nbsp;|&nbsp; Web Developer</p>
-    <p class="hero-sub">
-      I build real-world projects using Python, Excel, and Web Technologies to solve practical problems and deliver meaningful insights.
-    </p>
-    <div class="hero-btns">
-      <a href="Updated_M_Ramzan_CV.pdf" download class="btn-primary">📄 Download CV</a>
-      <a href="#projects" class="btn-outline">🚀 View Projects</a>
+<section class="hero">
+
+  <div class="hero-content">
+
+    <!-- LEFT SIDE -->
+    <div class="hero-text">
+
+      <div class="hero-badge">
+        🟢 Available for Internships
+      </div>
+
+      <h1>
+        Hi, I'm <br>
+        <span>M Ramzan</span>
+      </h1>
+
+      <h3>
+        Data Analyst | Python Developer | Web Developer
+      </h3>
+
+      <a href="#projects" class="btn">View Projects</a>
+
     </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+    <div class="hero-image">
+      <img src="Profile pic.jpeg" class="profile-img">
+    </div>
+
   </div>
+
 </section>
 
 <!-- ABOUT -->
-<section id="about">
-  <div data-aos="fade-up">
-    <div class="section-label">ABOUT ME</div>
-    <h2 class="section-title">By The <span>Numbers</span></h2>
-    <p class="section-sub">Mathematics meets technology — building real-world solutions.</p>
-  </div>
-
-  <div class="stats-grid">
-    <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
-      <div class="stat-icon">🤖</div>
-      <div class="stat-num">2+</div>
-      <div class="stat-label">AI Projects Built</div>
-    </div>
-    <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
-      <div class="stat-icon">📊</div>
-      <div class="stat-num">5+</div>
-      <div class="stat-label">Data Projects</div>
-    </div>
-    <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
-      <div class="stat-icon">📚</div>
-      <div class="stat-num">4th</div>
-      <div class="stat-label">Semester @ BZU</div>
-    </div>
-    <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
-      <div class="stat-icon">🏆</div>
-      <div class="stat-num">1</div>
-      <div class="stat-label">Int'l Conference</div>
-    </div>
-  </div>
-
-  <div class="about-text" data-aos="fade-up">
-    I am a <strong>Mathematics student at Bahauddin Zakariya University</strong> (CASPAM) with practical experience in <strong>Data Analysis, Machine Learning, and Web Development</strong>. I focus on real-world projects using Python, Excel, and modern web technologies — transforming raw data into clear insights and building intelligent digital solutions. My research on Pakistan's top companies was presented at <strong>FICPFSIT-2026</strong>, an international academic conference.
-  </div>
-
-  <div class="edu-card" data-aos="fade-up">
-    <div class="edu-icon">🎓</div>
-    <div>
-      <div class="edu-title">Bachelor of Science in Mathematics</div>
-      <div class="edu-sub">CASPAM — Bahauddin Zakariya University, Multan</div>
-      <div class="edu-meta">📅 2024 – 2028 &nbsp;|&nbsp; 📍 Multan, Pakistan &nbsp;|&nbsp; Roll No. BSM-24-66</div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div data-aos="fade-up">
-    <div class="section-label">MY ARSENAL</div>
-    <h2 class="section-title">Skills & <span>Technologies</span></h2>
-    <p class="section-sub">Tools I use to craft data-driven and AI-powered solutions.</p>
-  </div>
-
-  <div class="skills-grid">
-    <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-      <div class="skill-card-header">
-        <div class="skill-card-icon">💻</div>
-        <div class="skill-card-title">Programming</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">Python</span><span class="skill-pct">75%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">JavaScript</span><span class="skill-pct">70%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:70%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">HTML / CSS</span><span class="skill-pct">80%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:80%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">React</span><span class="skill-pct">65%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:65%"></div></div>
-      </div>
-    </div>
-
-    <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-      <div class="skill-card-header">
-        <div class="skill-card-icon">📊</div>
-        <div class="skill-card-title">Data & AI</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">Excel & Dashboards</span><span class="skill-pct">85%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">Data Analysis (pandas/numpy)</span><span class="skill-pct">75%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">Machine Learning</span><span class="skill-pct">65%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:65%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">Data Visualization</span><span class="skill-pct">78%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:78%"></div></div>
-      </div>
-    </div>
-
-    <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
-      <div class="skill-card-header">
-        <div class="skill-card-icon">🔧</div>
-        <div class="skill-card-title">Tools & Math</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">Git & GitHub</span><span class="skill-pct">70%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:70%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">Mathematical Statistics</span><span class="skill-pct">78%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:78%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">Numerical Analysis</span><span class="skill-pct">72%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:72%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-row"><span class="skill-name">GitHub Pages / Netlify</span><span class="skill-pct">75%</span></div>
-        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div data-aos="fade-up">
-    <div class="section-label">EXPERIENCE</div>
-    <h2 class="section-title">Where I've <span>Worked</span></h2>
-    <p class="section-sub">Real-world projects delivering impactful solutions.</p>
-  </div>
-
-  <div class="timeline">
-    <div class="timeline-item" data-aos="fade-up">
-      <div class="timeline-dot"></div>
-      <div class="exp-card">
-        <div class="exp-header">
-          <div class="exp-title">Independent Data Analyst & Developer</div>
-          <div class="exp-date">📅 2024 – Present</div>
-        </div>
-        <div class="exp-company">Self-Directed | CASPAM BZU Multan</div>
-        <ul class="exp-bullets">
-          <li>Analyzed financial data of Pakistan's top 6 companies — presented at FICPFSIT-2026</li>
-          <li>Built ML model for student marks prediction using Gradient Descent from scratch</li>
-          <li>Conducted student performance analysis using Python, pandas & matplotlib</li>
-          <li>Created interactive Excel dashboards with KPIs, charts, and insights panels</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="timeline-item" data-aos="fade-up">
-      <div class="timeline-dot"></div>
-      <div class="exp-card">
-        <div class="exp-header">
-          <div class="exp-title">Web Developer</div>
-          <div class="exp-date">📅 2024 – Present</div>
-        </div>
-        <div class="exp-company">RZ·Tech — Personal Brand</div>
-        <ul class="exp-bullets">
-          <li>Built RZ Commerce — dark-gold premium beauty/skincare e-commerce storefront</li>
-          <li>Designed and deployed personal portfolio with modern dark UI on GitHub Pages</li>
-          <li>Developed responsive web projects using HTML, CSS, JavaScript and React</li>
-          <li>Maintained GitHub profile with 5+ public repositories and clean documentation</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<section id="about" class="section">
+<h2>About Me</h2>
+<p>
+I am a Mathematics student passionate about Data Analysis, Python Development and Web Technologies.
+I build real-world projects using Excel, Python and visualization tools.
+</p>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
-  <div data-aos="fade-up">
-    <div class="section-label">PORTFOLIO</div>
-    <h2 class="section-title">Things I've <span>Built</span></h2>
-    <p class="section-sub">Data, ML, and web projects — all deployed and documented.</p>
-  </div>
+<section id="projects" class="section">
+<h2>Projects</h2>
 
-  <div class="projects-grid">
+<div class="grid">
 
-    <div class="proj-card" data-aos="fade-up" data-aos-delay="100">
-      <div class="proj-thumb proj-thumb-web">🌐<div class="proj-tag">Web</div></div>
-      <div class="proj-body">
-        <div class="proj-name">Personal Portfolio Website</div>
-        <div class="proj-tools">HTML · CSS · JavaScript</div>
-        <div class="proj-desc">Modern dark-themed developer portfolio showcasing all projects, skills, and experience. Deployed on GitHub Pages.</div>
-        <div class="proj-links">
-          <a href="https://rztech15.github.io/RZ-Portfolio-Website/" class="proj-link" target="_blank">🌐 Live →</a>
-          <a href="https://github.com/Rztech15/RZ-Portfolio-Website" class="proj-link" target="_blank">GitHub →</a>
-        </div>
-      </div>
-    </div>
+<a href="#" class="card">Student Performance Analysis</a>
+<a href="#" class="card">Pakistan Companies Data Analysis</a>
+<a href="#" class="card">Linear Regression Model</a>
 
-    <div class="proj-card" data-aos="fade-up" data-aos-delay="200">
-      <div class="proj-thumb proj-thumb-ecom">🛍️<div class="proj-tag">E-Commerce</div></div>
-      <div class="proj-body">
-        <div class="proj-name">RZ Commerce</div>
-        <div class="proj-tools">HTML · CSS · JavaScript</div>
-        <div class="proj-desc">Premium beauty & skincare e-commerce storefront with dark-gold luxury aesthetic. Fully responsive and live.</div>
-        <div class="proj-links">
-          <a href="https://rztech15.github.io/rzcommerce/" class="proj-link" target="_blank">🌐 Live →</a>
-          <a href="https://github.com/Rztech15/rzcommerce" class="proj-link" target="_blank">GitHub →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj-card" data-aos="fade-up" data-aos-delay="300">
-      <div class="proj-thumb proj-thumb-data">📊<div class="proj-tag">Data Analysis</div></div>
-      <div class="proj-body">
-        <div class="proj-name">Pakistani Companies Analysis</div>
-        <div class="proj-tools">Microsoft Excel · Data Visualization</div>
-        <div class="proj-desc">Financial dashboard of PSO, OGDCL, HBL, UBL, Meezan Bank & Lucky Cement — presented at FICPFSIT-2026.</div>
-        <div class="proj-links">
-          <a href="https://github.com/Rztech15/Pakistan_Companies_Data_Analysis" class="proj-link" target="_blank">GitHub →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj-card" data-aos="fade-up" data-aos-delay="100">
-      <div class="proj-thumb proj-thumb-data">📚<div class="proj-tag">Data Analysis</div></div>
-      <div class="proj-body">
-        <div class="proj-name">Student Performance Analysis</div>
-        <div class="proj-tools">Python · pandas · matplotlib · numpy</div>
-        <div class="proj-desc">Analyzed student data to find patterns between study habits, attendance, and grades. 4 key visualizations.</div>
-        <div class="proj-links">
-          <a href="https://github.com/Rztech15/Student-Performance-Analysis" class="proj-link" target="_blank">GitHub →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj-card" data-aos="fade-up" data-aos-delay="200">
-      <div class="proj-thumb proj-thumb-ml">📈<div class="proj-tag">Machine Learning</div></div>
-      <div class="proj-body">
-        <div class="proj-name">Linear Regression Model</div>
-        <div class="proj-tools">Python · NumPy · Gradient Descent</div>
-        <div class="proj-desc">Student marks prediction built from scratch using multivariate linear regression and gradient descent — no sklearn.</div>
-        <div class="proj-links">
-          <a href="https://github.com/Rztech15/Linear-Regression-Student-Marks" class="proj-link" target="_blank">GitHub →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj-card" data-aos="fade-up" data-aos-delay="300">
-      <div class="proj-thumb proj-thumb-ai">👤<div class="proj-tag">GitHub</div></div>
-      <div class="proj-body">
-        <div class="proj-name">Ramzan GitHub Profile</div>
-        <div class="proj-tools">Markdown · GitHub Profile README</div>
-        <div class="proj-desc">Professional GitHub profile with animated typing intro, project showcase, stats, and personal branding.</div>
-        <div class="proj-links">
-          <a href="https://github.com/Rztech15/Rztech15" class="proj-link" target="_blank">GitHub →</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
+</div>
 </section>
 
 <!-- CERTIFICATES -->
-<section id="certificates">
-  <div data-aos="fade-up">
-    <div class="section-label">ACHIEVEMENTS</div>
-    <h2 class="section-title">Certificates & <span>Achievements</span></h2>
-    <p class="section-sub">Recognition and milestones in my academic journey.</p>
-  </div>
+<section id="certs" class="section">
+<h2>Certificates</h2>
 
-  <div class="cert-grid">
-    <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
-      <div class="cert-icon">🏆</div>
-      <div>
-        <div class="cert-title">International Conference Participation</div>
-        <div class="cert-org">FICPFSIT-2026</div>
-        <div class="cert-desc">Presented research poster on financial data analysis of Pakistan's top companies at an international academic conference.</div>
-      </div>
-    </div>
+<div class="grid">
 
-    <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
-      <div class="cert-icon">🎓</div>
-      <div>
-        <div class="cert-title">BS Mathematics — CASPAM</div>
-        <div class="cert-org">Bahauddin Zakariya University, Multan</div>
-        <div class="cert-desc">Pursuing BS Mathematics with focus on Applied Mathematics, Statistics, Machine Learning and Numerical Analysis.</div>
-      </div>
-    </div>
+<img src="Code Meet.jpeg" class="card">
+<img src="FICPFIST-2026(1).jpeg" class="card">
+<img src="FICPFIST-2026(2).jpeg" class="card">
 
-    <div class="cert-card" data-aos="fade-up" data-aos-delay="300">
-      <div class="cert-icon">💻</div>
-      <div>
-        <div class="cert-title">Open Source Developer</div>
-        <div class="cert-org">GitHub — rztech15</div>
-        <div class="cert-desc">Maintaining 5+ public repositories with complete documentation, READMEs, and live deployed projects.</div>
-      </div>
-    </div>
-  </div>
+</div>
 </section>
-
-
-<section id="resume">
-  <div class="section-label">RESUME</div>
-  <h2 class="section-title">My <span>CV</span></h2>
-  <p class="section-sub">Preview of my latest professional CV.</p>
-  <img src="CV Image.jpeg" style="width:100%;max-width:850px;border-radius:20px;display:block;margin:auto;">
-</section>
-
 
 <!-- CONTACT -->
-<section id="contact">
-  <div data-aos="fade-up">
-    <div class="section-label">GET IN TOUCH</div>
-    <h2 class="section-title">Let's Build <span>Together</span></h2>
-    <p class="section-sub">Open to opportunities, collaborations, or just a great conversation.</p>
-  </div>
+<section id="contact" class="section">
+<h2>Contact</h2>
 
-  <div class="contact-wrap">
-    <div data-aos="fade-right">
-      <div class="contact-info-list">
-        <div class="contact-info-item">
-          <div class="contact-info-icon">📧</div>
-          <div>
-            <div class="contact-info-label">Email</div>
-            <div class="contact-info-val">ramzanbalochalpha@gmail.com</div>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-info-icon">📱</div>
-          <div>
-            <div class="contact-info-label">Phone / WhatsApp</div>
-            <div class="contact-info-val">0320-7895540</div>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-info-icon">📍</div>
-          <div>
-            <div class="contact-info-label">Location</div>
-            <div class="contact-info-val">Multan, Pakistan</div>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-info-icon">🎓</div>
-          <div>
-            <div class="contact-info-label">University</div>
-            <div class="contact-info-val">CASPAM — BZU Multan</div>
-          </div>
-        </div>
-      </div>
-      <div class="social-links">
-        <a href="https://github.com/Rztech15" class="social-btn" target="_blank">🐱 GitHub</a>
-        <a href="https://www.linkedin.com/in/muhammad-ramzan-a8593a3b5" class="social-btn" target="_blank">💼 LinkedIn</a>
-      </div>
-      <a href="https://wa.me/923207895540" class="wa-btn" target="_blank">💬 WhatsApp Me</a>
-    </div>
+<p>Email: yourmail@gmail.com</p>
 
-    <div data-aos="fade-left">
-      <div class="contact-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" placeholder="John Doe"/>
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="you@example.com"/>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Subject</label>
-          <input type="text" placeholder="Collaboration / Internship / Project"/>
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea rows="5" placeholder="Tell me about your project or idea..."></textarea>
-        </div>
-        <button class="form-submit">📨 Send Message</button>
-      </div>
-    </div>
-  </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  © 2026 <span>Muhammad Ramzan</span> · Built with 👑🖤 · rztech15
+© 2026 M Ramzan | Portfolio
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 700, once: true, offset: 80 });
-</script>
 </body>
 </html>
