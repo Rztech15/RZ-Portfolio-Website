@@ -3,7 +3,62 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Muhammad Ramzan | Portfolio</title>
+
+<!-- ── SEO META TAGS ── -->
+<title>Muhammad Ramzan | Data Analyst · Python Developer · Web Developer | Multan</title>
+<meta name="description" content="Muhammad Ramzan — Mathematics student at BZU Multan. Data Analyst, Python Developer & Web Developer. Built RZ Commerce, ML models, and data dashboards. Open to internships and collaborations.">
+<meta name="keywords" content="Muhammad Ramzan, RZ Tech, Data Analyst Pakistan, Python Developer Multan, Web Developer BZU, RZ Commerce, Machine Learning Pakistan, GitHub rztech15, Portfolio Multan">
+<meta name="author" content="Muhammad Ramzan">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rztech15.github.io/RZ-Portfolio-Website/">
+
+<!-- ── OPEN GRAPH (Facebook, WhatsApp, LinkedIn) ── -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rztech15.github.io/RZ-Portfolio-Website/">
+<meta property="og:title" content="Muhammad Ramzan | Data Analyst · Python Developer · Web Developer">
+<meta property="og:description" content="Mathematics student at BZU Multan. Building data-driven solutions and modern web projects. Presented research at FICPFSIT-2026.">
+<meta property="og:image" content="Profile pic.jpeg">
+<meta property="og:locale" content="en_PK">
+
+<!-- ── TWITTER CARD ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Muhammad Ramzan | Data Analyst · Python Developer">
+<meta name="twitter:description" content="Mathematics student at BZU Multan. Data Analyst, Python & Web Developer. Check out my portfolio!">
+<meta name="twitter:image" content="Profile pic.jpeg">
+
+<!-- ── FAVICON ── -->
+<link rel="icon" type="image/jpeg" href="Profile pic.jpeg">
+<link rel="apple-touch-icon" href="Profile pic.jpeg">
+
+<!-- ── STRUCTURED DATA (Google Rich Results) ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Muhammad Ramzan",
+  "url": "https://rztech15.github.io/RZ-Portfolio-Website/",
+  "image": "https://rztech15.github.io/RZ-Portfolio-Website/Profile pic.jpeg",
+  "jobTitle": "Data Analyst & Web Developer",
+  "description": "Mathematics student at BZU Multan specializing in Data Analysis, Python, and Web Development.",
+  "email": "ramzanbalochmrbaloch@gmail.com",
+  "telephone": "+923207895540",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Multan",
+    "addressCountry": "PK"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Bahauddin Zakariya University",
+    "address": "Multan, Pakistan"
+  },
+  "sameAs": [
+    "https://github.com/Rztech15",
+    "https://www.linkedin.com/in/muhammad-ramzan-a8593a3b5"
+  ]
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 
 <style>
@@ -44,7 +99,7 @@
   .nav-links a { color: var(--muted); font-size:0.85rem; font-weight:500; text-decoration:none; transition:color 0.2s; }
   .nav-links a:hover { color: var(--pink); }
 
-  /* HERO — 2 COLUMN */
+  /* HERO */
   #home {
     min-height: 100vh;
     display: flex; align-items:center;
@@ -59,60 +114,22 @@
     content:''; position:absolute; bottom:-200px; left:-200px; width:500px; height:500px;
     background: radial-gradient(circle, rgba(224,64,251,0.1) 0%, transparent 70%); border-radius:50%;
   }
-  .hero-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-    width: 100%;
-    position: relative; z-index:1;
-  }
-
-  /* LEFT */
+  .hero-wrap { display:flex; align-items:center; justify-content:space-between; gap:3rem; width:100%; position:relative; z-index:1; }
   .hero-left { flex:1; }
-  .hero-badge {
-    display:inline-block; background: rgba(124,58,237,0.2);
-    border: 1px solid rgba(124,58,237,0.4); border-radius:50px;
-    padding: 6px 18px; font-size:0.8rem; color: var(--blue); font-weight:500;
-    margin-bottom: 1.2rem; letter-spacing:0.05em;
-  }
+  .hero-badge { display:inline-block; background: rgba(124,58,237,0.2); border: 1px solid rgba(124,58,237,0.4); border-radius:50px; padding: 6px 18px; font-size:0.8rem; color: var(--blue); font-weight:500; margin-bottom: 1.2rem; letter-spacing:0.05em; }
   .hero-title { font-size: clamp(2rem, 4.5vw, 3.8rem); font-weight: 900; line-height:1.1; margin-bottom: 0.6rem; color: var(--white); }
   .hero-title span { background: var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
   .hero-tagline { font-size:1.1rem; font-weight:700; color: var(--pink); margin-bottom:1rem; }
   .hero-sub { font-size:0.97rem; color: var(--muted); max-width:480px; margin-bottom:2.5rem; line-height:1.8; }
   .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; }
-  .btn-primary {
-    background: var(--grad); color:#fff; border:none;
-    padding:12px 28px; border-radius:50px; font-size:0.9rem; font-weight:600;
-    cursor:pointer; text-decoration:none; transition: opacity 0.2s, transform 0.2s;
-    display:inline-flex; align-items:center; gap:8px;
-    box-shadow: 0 0 20px rgba(124,58,237,0.35);
-  }
+  .btn-primary { background: var(--grad); color:#fff; border:none; padding:12px 28px; border-radius:50px; font-size:0.9rem; font-weight:600; cursor:pointer; text-decoration:none; transition: opacity 0.2s, transform 0.2s; display:inline-flex; align-items:center; gap:8px; box-shadow: 0 0 20px rgba(124,58,237,0.35); }
   .btn-primary:hover { opacity:0.88; transform:translateY(-2px); }
-  .btn-outline {
-    background:transparent; color: var(--text); border:1px solid rgba(124,58,237,0.5);
-    padding:12px 28px; border-radius:50px; font-size:0.9rem; font-weight:600;
-    cursor:pointer; text-decoration:none; transition: border-color 0.2s, transform 0.2s;
-    display:inline-flex; align-items:center; gap:8px;
-  }
+  .btn-outline { background:transparent; color: var(--text); border:1px solid rgba(124,58,237,0.5); padding:12px 28px; border-radius:50px; font-size:0.9rem; font-weight:600; cursor:pointer; text-decoration:none; transition: border-color 0.2s, transform 0.2s; display:inline-flex; align-items:center; gap:8px; }
   .btn-outline:hover { border-color: var(--pink); transform:translateY(-2px); }
-
-  /* RIGHT — Profile Pic */
   .hero-right { flex-shrink:0; }
-  .profile-pic-wrap {
-    width:260px; height:260px; border-radius:50%;
-    background: var(--grad); padding:4px;
-    box-shadow: 0 0 50px rgba(124,58,237,0.4), 0 0 100px rgba(224,64,251,0.15);
-  }
-  .profile-pic-wrap img {
-    width:100%; height:100%; border-radius:50%;
-    object-fit:cover; border:4px solid var(--navy);
-  }
-  .profile-pic-placeholder {
-    width:100%; height:100%; border-radius:50%;
-    background: var(--card); border:4px solid var(--navy);
-    display:flex; align-items:center; justify-content:center; font-size:5rem;
-  }
+  .profile-pic-wrap { width:260px; height:260px; border-radius:50%; background: var(--grad); padding:4px; box-shadow: 0 0 50px rgba(124,58,237,0.4), 0 0 100px rgba(224,64,251,0.15); }
+  .profile-pic-wrap img { width:100%; height:100%; border-radius:50%; object-fit:cover; border:4px solid var(--navy); }
+  .profile-pic-placeholder { width:100%; height:100%; border-radius:50%; background: var(--card); border:4px solid var(--navy); display:flex; align-items:center; justify-content:center; font-size:5rem; }
 
   /* SECTIONS */
   section { padding: 100px 6%; }
@@ -172,10 +189,11 @@
   .proj-card:hover { border-color: var(--purple); transform:translateY(-5px); box-shadow: 0 10px 30px rgba(124,58,237,0.15); }
   .proj-thumb { height:130px; display:flex; align-items:center; justify-content:center; font-size:3rem; position:relative; }
   .t1 { background: linear-gradient(135deg,#1a1a35,#1e3a5f); }
-  .t2 { background: linear-gradient(135deg,#1a1a35,#3a1b1b); }
-  .t3 { background: linear-gradient(135deg,#1a1a35,#2d1b3d); }
-  .t4 { background: linear-gradient(135deg,#1a1a35,#1b3a2d); }
-  .t5 { background: linear-gradient(135deg,#1a1a35,#2d1b69); }
+  .t2 { background: linear-gradient(135deg,#2a1a10,#3a2800); }
+  .t3 { background: linear-gradient(135deg,#1a1a35,#3a1b1b); }
+  .t4 { background: linear-gradient(135deg,#1a1a35,#2d1b3d); }
+  .t5 { background: linear-gradient(135deg,#1a1a35,#1b3a2d); }
+  .t6 { background: linear-gradient(135deg,#1a1a35,#2d1b69); }
   .proj-tag { position:absolute; top:10px; left:10px; background:rgba(124,58,237,0.55); border-radius:6px; padding:3px 10px; font-size:0.7rem; font-weight:600; color:#fff; }
   .proj-body { padding:1.5rem; }
   .proj-name { font-weight:700; color:var(--white); font-size:0.95rem; margin-bottom:0.3rem; }
@@ -268,29 +286,21 @@
 <!-- HERO -->
 <section id="home">
   <div class="hero-wrap">
-
-    <!-- LEFT TEXT -->
     <div class="hero-left reveal">
       <div class="hero-badge">👑 Mathematics × AI × Data</div>
       <h1 class="hero-title">Hi, I'm<br><span>Muhammad Ramzan</span></h1>
       <p class="hero-tagline">From Mathematics to Code and Data Analytics</p>
-      <p class="hero-sub">
-        Passionate about solving problems through logic, technology, and data. I build real-world projects using Python, Excel, and Web Technologies to deliver meaningful insights.
-      </p>
+      <p class="hero-sub">Passionate about solving problems through logic, technology, and data. I build real-world projects using Python, Excel, and Web Technologies to deliver meaningful insights.</p>
       <div class="hero-btns">
         <a href="#cv" class="btn-primary">📄 Download CV</a>
         <a href="#projects" class="btn-outline">🚀 View Projects</a>
       </div>
     </div>
-
-    <!-- RIGHT PROFILE PIC -->
     <div class="hero-right reveal">
       <div class="profile-pic-wrap">
-        <img src="Profile pic.jpeg" alt="Muhammad Ramzan"
-          onerror="this.parentElement.innerHTML='<div class=\'profile-pic-placeholder\'>👑</div>'"/>
+        <img src="Profile pic.jpeg" alt="Muhammad Ramzan — Data Analyst & Web Developer Multan" onerror="this.parentElement.innerHTML='<div class=\'profile-pic-placeholder\'>👑</div>'"/>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -379,7 +389,7 @@
         <div class="exp-header"><div class="exp-title">Web Developer</div><div class="exp-date">📅 2024 – Present</div></div>
         <div class="exp-company">RZ·Tech — Personal Brand</div>
         <ul class="exp-bullets">
-          <li>Built RZ Commerce — dark-gold premium beauty/skincare e-commerce storefront</li>
+          <li>Built RZ Commerce — dark-gold premium Glutawol skincare e-commerce storefront</li>
           <li>Designed and deployed personal portfolio with modern dark UI on GitHub Pages</li>
           <li>Developed responsive web projects using HTML, CSS, JavaScript and React</li>
           <li>Maintained GitHub profile with 5+ public repositories and clean documentation</li>
@@ -397,6 +407,7 @@
     <p class="section-sub">Data, ML, and web projects — all deployed and documented.</p>
   </div>
   <div class="projects-grid">
+
     <div class="proj-card reveal">
       <div class="proj-thumb t1">🌐<div class="proj-tag">Web</div></div>
       <div class="proj-body">
@@ -409,18 +420,21 @@
         </div>
       </div>
     </div>
+
+    <!-- ✅ RZ COMMERCE — UPDATED LINK -->
     <div class="proj-card reveal">
       <div class="proj-thumb t2">🛍️<div class="proj-tag">E-Commerce</div></div>
       <div class="proj-body">
         <div class="proj-name">RZ Commerce</div>
         <div class="proj-tools">HTML · CSS · JavaScript</div>
-        <div class="proj-desc">Premium beauty & skincare e-commerce storefront with dark-gold luxury aesthetic. Fully responsive and live.</div>
+        <div class="proj-desc">Premium Glutawol skincare e-commerce store with dark-gold luxury design, product slider, cart & WhatsApp checkout. Fully responsive.</div>
         <div class="proj-links">
           <a href="https://rztech15.github.io/RZ-Commerce/" class="proj-link" target="_blank">🌐 Live →</a>
           <a href="https://github.com/Rztech15/RZ-Commerce" class="proj-link" target="_blank">GitHub →</a>
         </div>
       </div>
     </div>
+
     <div class="proj-card reveal">
       <div class="proj-thumb t3">📊<div class="proj-tag">Data Analysis</div></div>
       <div class="proj-body">
@@ -432,6 +446,7 @@
         </div>
       </div>
     </div>
+
     <div class="proj-card reveal">
       <div class="proj-thumb t3">📚<div class="proj-tag">Data Analysis</div></div>
       <div class="proj-body">
@@ -443,8 +458,9 @@
         </div>
       </div>
     </div>
+
     <div class="proj-card reveal">
-      <div class="proj-thumb t4">📈<div class="proj-tag">Machine Learning</div></div>
+      <div class="proj-thumb t5">📈<div class="proj-tag">Machine Learning</div></div>
       <div class="proj-body">
         <div class="proj-name">Linear Regression Model</div>
         <div class="proj-tools">Python · NumPy · Gradient Descent</div>
@@ -454,8 +470,9 @@
         </div>
       </div>
     </div>
+
     <div class="proj-card reveal">
-      <div class="proj-thumb t5">👤<div class="proj-tag">GitHub</div></div>
+      <div class="proj-thumb t6">👤<div class="proj-tag">GitHub</div></div>
       <div class="proj-body">
         <div class="proj-name">Ramzan GitHub Profile</div>
         <div class="proj-tools">Markdown · GitHub Profile README</div>
@@ -465,6 +482,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -551,7 +569,7 @@
       <a href="https://wa.me/923207895540" class="wa-btn" target="_blank">💬 WhatsApp Me</a>
     </div>
     <div class="reveal">
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/mlgyrvov" method="POST">
+      <form class="contact-form" id="contactForm">
         <div class="form-row">
           <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="John Doe" required/></div>
           <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@example.com" required/></div>
@@ -571,52 +589,29 @@
 </footer>
 
 <script>
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 
-  // Contact Form — Formspree
   const form = document.getElementById('contactForm');
   const msg = document.getElementById('formMsg');
   const btn = document.getElementById('submitBtn');
-
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
-    btn.textContent = '⏳ Sending...';
-    btn.disabled = true;
-
-    const data = new FormData(form);
-
+    btn.textContent = '⏳ Sending...'; btn.disabled = true;
     try {
-      const res = await fetch('https://formspree.io/f/mlgyrvov', {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-
+      const res = await fetch('https://formspree.io/f/mlgyrvov', { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
       if(res.ok) {
-        msg.style.display = 'block';
-        msg.style.background = 'rgba(99,102,241,0.15)';
-        msg.style.border = '1px solid rgba(99,102,241,0.4)';
-        msg.style.color = '#a5b4fc';
-        msg.textContent = '✅ Thank you for reaching out! I will get back to you within 24 hours. 🙏';
-        form.reset();
-      } else {
-        throw new Error('Failed');
-      }
+        msg.style.display='block'; msg.style.background='rgba(99,102,241,0.15)'; msg.style.border='1px solid rgba(99,102,241,0.4)'; msg.style.color='#a5b4fc';
+        msg.textContent='✅ Thank you! I will get back to you within 24 hours. 🙏'; form.reset();
+      } else { throw new Error('Failed'); }
     } catch(err) {
-      msg.style.display = 'block';
-      msg.style.background = 'rgba(224,64,251,0.1)';
-      msg.style.border = '1px solid rgba(224,64,251,0.3)';
-      msg.style.color = '#f0abfc';
-      msg.textContent = '❌ Error. Email me directly: ramzanbalochmrbaloch@gmail.com';
+      msg.style.display='block'; msg.style.background='rgba(224,64,251,0.1)'; msg.style.border='1px solid rgba(224,64,251,0.3)'; msg.style.color='#f0abfc';
+      msg.textContent='❌ Error. Email me: ramzanbalochmrbaloch@gmail.com';
     }
-
-    btn.textContent = '📨 Send Message';
-    btn.disabled = false;
+    btn.textContent='📨 Send Message'; btn.disabled=false;
   });
 </script>
 </body>
