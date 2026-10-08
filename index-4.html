@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Muhammad Ramzan | Data Analyst · Python Developer · Web Developer | Multan</title>
+<meta name="description" content="Muhammad Ramzan — Data Analyst, Python & Web Developer in Multan. Built RZ Commerce, AI SkillBridge, ML models and data dashboards; research presented at FICPFSIT-2026. Open to internships and freelance work.">
+<meta name="keywords" content="Muhammad Ramzan, RZ Tech, Data Analyst Pakistan, Python Developer Multan, Web Developer, RZ Commerce, AI SkillBridge, Future Builders, GitHub rztech15, Portfolio Multan">
+<meta name="author" content="Muhammad Ramzan">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rztech15.github.io/RZ-Portfolio-Website/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rztech15.github.io/RZ-Portfolio-Website/">
+<meta property="og:title" content="Muhammad Ramzan | Data Analyst · Python Developer · Web Developer">
+<meta property="og:description" content="Data Analyst, Python & Web Developer. Group Lead at Future Builders. Research presented at FICPFSIT-2026.">
+<meta property="og:image" content="https://rztech15.github.io/RZ-Portfolio-Website/Profile%20pic.jpeg">
+<meta property="og:locale" content="en_PK">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Muhammad Ramzan | Data Analyst · Python Developer">
+<meta name="twitter:description" content="Data Analyst, Python & Web Developer. See my projects, experience and certificates.">
+<meta name="twitter:image" content="https://rztech15.github.io/RZ-Portfolio-Website/Profile%20pic.jpeg">
+
+<link rel="icon" type="image/jpeg" href="Profile pic.jpeg">
+<link rel="apple-touch-icon" href="Profile pic.jpeg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Muhammad Ramzan",
+  "url": "https://rztech15.github.io/RZ-Portfolio-Website/",
+  "image": "https://rztech15.github.io/RZ-Portfolio-Website/Profile%20pic.jpeg",
+  "jobTitle": "Data Analyst & Web Developer",
+  "description": "Data Analyst, Python and Web Developer. Group Lead at Future Builders. BS Mathematics, Bahauddin Zakariya University.",
+  "email": "ramzanbalochmrbaloch@gmail.com",
+  "telephone": "+923207895540",
+  "address": { "@type": "PostalAddress", "addressLocality": "Multan", "addressCountry": "PK" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Bahauddin Zakariya University", "address": "Multan, Pakistan" },
+  "sameAs": [
+    "https://github.com/Rztech15",
+    "https://www.linkedin.com/in/muhammad-ramzan-a91510423"
+  ]
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
+<style>
+  :root { --navy:#0a0a1a; --navy2:#0f0f2a; --card:#13132b; --pink:#e040fb; --purple:#7c3aed; --blue:#6366f1;
+    --grad:linear-gradient(135deg,#e040fb,#7c3aed,#6366f1); --grad2:linear-gradient(90deg,#e040fb,#7c3aed);
+    --text:#e2e8f0; --muted:#8892a4; --white:#fff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Inter',sans-serif; background:var(--navy); color:var(--text); overflow-x:hidden; }
+  a:focus-visible, button:focus-visible { outline:2px solid var(--pink); outline-offset:3px; }
+  .reveal { opacity:0; transform:translateY(40px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .reveal{opacity:1;transform:none;transition:none} }
+
+  /* NAV */
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:16px 5%; background:rgba(10,10,26,.95); backdrop-filter:blur(12px); border-bottom:1px solid rgba(124,58,237,.15); }
+  .logo { font-size:1.3rem; font-weight:900; display:flex; align-items:center; gap:2px; flex-shrink:0; }
+  .logo-rz { background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .logo-dot { color:var(--pink); font-size:1.4rem; margin:0 1px; line-height:1; }
+  .logo-dev { color:var(--white); font-weight:300; font-size:1.05rem; letter-spacing:.08em; }
+  .nav-links { display:flex; gap:1.5rem; align-items:center; }
+  .nav-links a { color:var(--muted); font-size:.85rem; font-weight:500; text-decoration:none; transition:color .2s; white-space:nowrap; }
+  .nav-links a:hover { color:var(--pink); }
+
+  /* HERO */
+  #home { min-height:100vh; display:flex; align-items:center; padding:120px 6% 80px; position:relative; overflow:hidden; }
+  #home::before { content:''; position:absolute; top:-200px; right:-200px; width:600px; height:600px; background:radial-gradient(circle,rgba(124,58,237,.15) 0%,transparent 70%); border-radius:50%; }
+  #home::after { content:''; position:absolute; bottom:-200px; left:-200px; width:500px; height:500px; background:radial-gradient(circle,rgba(224,64,251,.1) 0%,transparent 70%); border-radius:50%; }
+  .hero-wrap { display:flex; align-items:center; justify-content:space-between; gap:3rem; width:100%; position:relative; z-index:1; }
+  .hero-left { flex:1; }
+  .hero-badge { display:inline-block; background:rgba(124,58,237,.2); border:1px solid rgba(124,58,237,.4); border-radius:50px; padding:6px 18px; font-size:.8rem; color:var(--blue); font-weight:500; margin-bottom:1.2rem; letter-spacing:.03em; }
+  .hero-title { font-size:clamp(2rem,4.5vw,3.8rem); font-weight:900; line-height:1.1; margin-bottom:.6rem; color:var(--white); }
+  .hero-title span, .section-title span, .stat-num { background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .hero-tagline { font-size:1.1rem; font-weight:700; color:var(--pink); margin-bottom:1rem; }
+  .hero-sub { font-size:.97rem; color:var(--muted); max-width:480px; margin-bottom:2.5rem; line-height:1.8; }
+  .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; }
+  .btn-primary { background:var(--grad); color:#fff; border:none; padding:12px 28px; border-radius:50px; font-size:.9rem; font-weight:600; cursor:pointer; text-decoration:none; transition:opacity .2s, transform .2s; display:inline-flex; align-items:center; gap:8px; box-shadow:0 0 20px rgba(124,58,237,.35); }
+  .btn-primary:hover { opacity:.88; transform:translateY(-2px); }
+  .btn-outline { background:transparent; color:var(--text); border:1px solid rgba(124,58,237,.5); padding:12px 28px; border-radius:50px; font-size:.9rem; font-weight:600; cursor:pointer; text-decoration:none; transition:border-color .2s, transform .2s; display:inline-flex; align-items:center; gap:8px; }
+  .btn-outline:hover { border-color:var(--pink); transform:translateY(-2px); }
+  .hero-right { flex-shrink:0; }
+  .profile-pic-wrap { width:260px; height:260px; border-radius:50%; background:var(--grad); padding:4px; box-shadow:0 0 50px rgba(124,58,237,.4), 0 0 100px rgba(224,64,251,.15); }
+  .profile-pic-wrap img { width:100%; height:100%; border-radius:50%; object-fit:cover; border:4px solid var(--navy); }
+  .profile-pic-placeholder { width:100%; height:100%; border-radius:50%; background:var(--card); border:4px solid var(--navy); display:flex; align-items:center; justify-content:center; font-size:5rem; }
+
+  /* SECTIONS */
+  section { padding:100px 6%; }
+  .section-label { font-size:.75rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; background:var(--grad2); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:.8rem; }
+  .section-title { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; color:var(--white); margin-bottom:.8rem; line-height:1.2; }
+  .section-sub { color:var(--muted); font-size:1rem; margin-bottom:3rem; max-width:520px; }
+
+  /* ABOUT */
+  #about, #experience, #certificates { background:var(--navy2); }
+  .stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1.5rem; margin-bottom:2.5rem; }
+  .stat-card { background:var(--card); border:1px solid rgba(124,58,237,.2); border-radius:16px; padding:1.8rem 1.2rem; text-align:center; transition:border-color .2s, transform .2s; }
+  .stat-card:hover { border-color:var(--purple); transform:translateY(-4px); }
+  .stat-icon { font-size:1.8rem; margin-bottom:.8rem; }
+  .stat-num { font-size:2rem; font-weight:900; }
+  .stat-label { color:var(--muted); font-size:.8rem; margin-top:4px; }
+  .about-text { background:var(--card); border:1px solid rgba(124,58,237,.15); border-radius:16px; padding:2rem; line-height:1.9; margin-bottom:1.5rem; font-size:.95rem; }
+  .edu-card { display:flex; align-items:center; gap:1.2rem; background:var(--card); border:1px solid rgba(99,102,241,.25); border-radius:14px; padding:1.5rem; }
+  .edu-icon { width:48px; height:48px; background:var(--grad); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0; }
+  .edu-title { font-weight:700; color:var(--white); font-size:.95rem; }
+  .edu-sub { color:var(--blue); font-size:.85rem; font-weight:500; margin:2px 0; }
+  .edu-meta { color:var(--muted); font-size:.8rem; }
+
+  /* SKILLS (chips) */
+  .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:1.5rem; }
+  .skill-card { background:var(--card); border:1px solid rgba(124,58,237,.18); border-radius:16px; padding:1.8rem; transition:border-color .2s, transform .2s; }
+  .skill-card:hover { border-color:var(--purple); transform:translateY(-3px); }
+  .skill-card-header { display:flex; align-items:center; gap:.8rem; margin-bottom:1.3rem; }
+  .skill-card-icon { width:36px; height:36px; background:rgba(124,58,237,.2); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; }
+  .skill-card-title { font-weight:700; font-size:.95rem; color:var(--white); }
+  .chips { display:flex; flex-wrap:wrap; gap:.5rem; }
+  .chips span { padding:6px 14px; border-radius:50px; font-size:.82rem; background:rgba(124,58,237,.15); border:1px solid rgba(124,58,237,.3); color:var(--text); }
+
+  /* EXPERIENCE */
+  .timeline { position:relative; padding-left:2rem; }
+  .timeline::before { content:''; position:absolute; left:8px; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--purple),transparent); }
+  .timeline-item { position:relative; margin-bottom:2.5rem; }
+  .timeline-dot { position:absolute; left:-2rem; top:6px; width:16px; height:16px; background:var(--grad); border-radius:50%; border:2px solid var(--navy2); }
+  .exp-card { background:var(--card); border:1px solid rgba(124,58,237,.18); border-radius:16px; padding:1.8rem; transition:border-color .2s, transform .2s; }
+  .exp-card:hover { border-color:var(--purple); transform:translateY(-2px); }
+  .exp-header { display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem; margin-bottom:.5rem; }
+  .exp-title { font-weight:700; color:var(--white); font-size:1rem; }
+  .exp-date { font-size:.8rem; color:var(--muted); }
+  .exp-company { color:var(--blue); font-size:.85rem; font-weight:600; margin-bottom:1rem; }
+  .exp-bullets { list-style:none; }
+  .exp-bullets li { font-size:.88rem; padding:4px 0 4px 1.2rem; position:relative; line-height:1.6; }
+  .exp-bullets li::before { content:'▸'; position:absolute; left:0; color:var(--pink); }
+
+  /* PROJECTS */
+  .filters { display:flex; gap:.6rem; margin-bottom:2rem; flex-wrap:wrap; }
+  .f { background:var(--card); color:var(--text); border:1px solid rgba(124,58,237,.3); border-radius:50px; padding:8px 18px; font-size:.85rem; font-weight:600; font-family:inherit; cursor:pointer; transition:border-color .2s; }
+  .f:hover { border-color:var(--pink); }
+  .f.active { background:var(--grad); border-color:transparent; color:#fff; }
+  .projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; }
+  .proj-card { background:var(--card); border:1px solid rgba(124,58,237,.18); border-radius:16px; overflow:hidden; transition:border-color .2s, transform .2s, box-shadow .2s; }
+  .proj-card:hover { border-color:var(--purple); transform:translateY(-5px); box-shadow:0 10px 30px rgba(124,58,237,.15); }
+  .proj-thumb { height:130px; display:flex; align-items:center; justify-content:center; font-size:3rem; position:relative; }
+  .t1 { background:linear-gradient(135deg,#1a1a35,#1e3a5f); }
+  .t2 { background:linear-gradient(135deg,#2a1a10,#3a2800); }
+  .t3 { background:linear-gradient(135deg,#1a1a35,#3a1b1b); }
+  .t5 { background:linear-gradient(135deg,#1a1a35,#1b3a2d); }
+  .t6 { background:linear-gradient(135deg,#1a1a35,#2d1b69); }
+  .proj-tag, .proj-status { position:absolute; top:10px; border-radius:6px; padding:3px 10px; font-size:.7rem; font-weight:600; color:#fff; }
+  .proj-tag { left:10px; background:rgba(124,58,237,.55); }
+  .proj-status { right:10px; background:rgba(224,64,251,.55); }
+  .proj-body { padding:1.5rem; }
+  .proj-name { font-weight:700; color:var(--white); font-size:.95rem; margin-bottom:.3rem; }
+  .proj-tools { font-size:.75rem; color:#a78bfa; font-weight:600; margin-bottom:.5rem; }
+  .proj-desc { color:var(--muted); font-size:.83rem; line-height:1.6; margin-bottom:1rem; }
+  .proj-links { display:flex; gap:1rem; flex-wrap:wrap; }
+  .proj-link { font-size:.82rem; color:var(--blue); font-weight:600; text-decoration:none; transition:color .2s; }
+  .proj-link:hover { color:var(--pink); }
+
+  /* CERTIFICATES */
+  .cert-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; }
+  .cert-card { background:var(--card); border:1px solid rgba(124,58,237,.18); border-radius:16px; overflow:hidden; transition:border-color .2s, transform .2s; }
+  .cert-card:hover { border-color:var(--pink); transform:translateY(-3px); }
+  .cert-img-wrap { display:block; width:100%; height:160px; overflow:hidden; background:var(--navy2); }
+  .cert-img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform .3s; }
+  .cert-card:hover .cert-img-wrap img { transform:scale(1.05); }
+  .cert-body { padding:1.2rem; display:flex; gap:1rem; align-items:flex-start; }
+  .cert-icon { width:40px; height:40px; background:var(--grad); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+  .cert-title { font-weight:700; color:var(--white); font-size:.88rem; margin-bottom:.3rem; }
+  .cert-org { color:var(--blue); font-size:.78rem; font-weight:600; margin-bottom:.3rem; }
+  .cert-desc { color:var(--muted); font-size:.78rem; line-height:1.6; }
+
+  /* CV */
+  #cv { text-align:center; }
+  .cv-card { max-width:500px; margin:0 auto; background:var(--card); border:1px solid rgba(124,58,237,.25); border-radius:20px; padding:3rem 2rem; }
+  .cv-img-wrap { width:110px; height:150px; margin:0 auto 1.5rem; border-radius:12px; overflow:hidden; border:2px solid rgba(124,58,237,.4); box-shadow:0 0 20px rgba(124,58,237,.2); }
+  .cv-img-wrap img { width:100%; height:100%; object-fit:cover; }
+  .cv-title { font-size:1.4rem; font-weight:800; color:var(--white); margin-bottom:.4rem; }
+  .cv-sub { color:var(--muted); margin-bottom:2rem; font-size:.88rem; line-height:1.6; }
+
+  /* CONTACT */
+  .contact-wrap { display:grid; grid-template-columns:1fr 1.4fr; gap:3rem; align-items:start; }
+  .contact-info-list { display:flex; flex-direction:column; gap:1rem; margin-top:1rem; }
+  .contact-info-item { display:flex; align-items:center; gap:1rem; background:var(--card); border:1px solid rgba(124,58,237,.15); border-radius:12px; padding:1rem 1.2rem; transition:border-color .2s; }
+  .contact-info-item:hover { border-color:var(--purple); }
+  .contact-info-icon { width:36px; height:36px; background:rgba(124,58,237,.2); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; }
+  .contact-info-label { font-size:.72rem; color:var(--muted); }
+  .contact-info-val { font-size:.88rem; font-weight:500; word-break:break-word; }
+  .social-links { display:flex; gap:.8rem; margin-top:1.5rem; flex-wrap:wrap; }
+  .social-btn { display:inline-flex; align-items:center; gap:8px; background:var(--card); border:1px solid rgba(124,58,237,.25); border-radius:10px; padding:10px 16px; font-size:.82rem; font-weight:600; color:var(--text); text-decoration:none; transition:border-color .2s, transform .2s; }
+  .social-btn:hover { border-color:var(--pink); transform:translateY(-2px); }
+  .wa-btn { margin-top:1rem; }
+  .contact-form { display:flex; flex-direction:column; gap:1rem; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .form-group { display:flex; flex-direction:column; gap:6px; }
+  .form-group label { font-size:.82rem; color:var(--muted); font-weight:500; }
+  .form-group input, .form-group textarea { background:var(--card); border:1px solid rgba(124,58,237,.2); border-radius:10px; padding:12px 14px; color:var(--text); font-size:.88rem; font-family:'Inter',sans-serif; transition:border-color .2s; resize:vertical; }
+  .form-group input:focus, .form-group textarea:focus { outline:none; border-color:var(--purple); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color:rgba(136,146,164,.5); }
+  .form-submit { background:var(--grad); color:#fff; border:none; padding:14px; border-radius:50px; font-size:.95rem; font-weight:600; cursor:pointer; transition:opacity .2s, transform .2s; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow:0 0 20px rgba(124,58,237,.3); }
+  .form-submit:hover { opacity:.88; transform:translateY(-2px); }
+
+  footer { text-align:center; padding:2.5rem 6%; color:var(--muted); font-size:.85rem; border-top:1px solid rgba(124,58,237,.1); }
+  footer span { background:var(--grad2); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:600; }
+
+  @media (max-width:768px) {
+    .hero-wrap { flex-direction:column-reverse; text-align:center; }
+    .hero-sub { margin:0 auto 2rem; }
+    .hero-btns { justify-content:center; }
+    .profile-pic-wrap { width:180px; height:180px; }
+    .contact-wrap { grid-template-columns:1fr; }
+    .form-row { grid-template-columns:1fr; }
+    section { padding:70px 5%; }
+    .nav-links { overflow-x:auto; gap:1rem; max-width:70%; scrollbar-width:none; }
+    .nav-links::-webkit-scrollbar { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo"><span class="logo-rz">RZ</span><span class="logo-dot">·</span><span class="logo-dev">Dev</span></div>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#upcoming">Upcoming</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-wrap">
+    <div class="hero-left reveal">
+      <div class="hero-badge">Data Analyst · Python Developer · Web Developer</div>
+      <h1 class="hero-title">Hi, I'm<br><span>Muhammad Ramzan</span></h1>
+      <p class="hero-tagline">I turn data into decisions and ideas into shipped products.</p>
+      <p class="hero-sub">Group Lead at Future Builders and founder of RZ Commerce. I build data analyses, machine learning models, and web platforms with Python, Excel, and modern web technologies.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">🚀 View Projects</a>
+        <a href="#cv" class="btn-outline">📄 Download CV</a>
+      </div>
+    </div>
+    <div class="hero-right reveal">
+      <div class="profile-pic-wrap">
+        <img src="Profile pic.jpeg" alt="Muhammad Ramzan — Data Analyst & Web Developer, Multan" onerror="this.parentElement.innerHTML='<div class=\'profile-pic-placeholder\'>👤</div>'"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <div class="section-label">About Me</div>
+    <h2 class="section-title">Profile at a <span>Glance</span></h2>
+    <p class="section-sub">A mathematics foundation applied to data, AI, and software.</p>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card reveal"><div class="stat-icon">🚀</div><div class="stat-num">8+</div><div class="stat-label">Projects Built</div></div>
+    <div class="stat-card reveal"><div class="stat-icon">👥</div><div class="stat-num">1</div><div class="stat-label">Team Led (Future Builders)</div></div>
+    <div class="stat-card reveal"><div class="stat-icon">🏆</div><div class="stat-num">1</div><div class="stat-label">Int'l Conference</div></div>
+    <div class="stat-card reveal"><div class="stat-icon">🎓</div><div class="stat-num">2028</div><div class="stat-label">BS Mathematics Graduate</div></div>
+  </div>
+  <div class="about-text reveal">
+    I am a <strong>data analyst and developer with a mathematics foundation</strong> (BS Mathematics, Bahauddin Zakariya University). I lead <strong>Future Builders</strong>, a group building AI, code, and software projects, and I run <strong>RZ Commerce</strong>, my own online store. My work covers <strong>data analysis, machine learning, and full web development</strong>, turning raw data into clear insights and ideas into working products. My research on Pakistan's top companies was presented at <strong>FICPFSIT-2026</strong>, an international academic conference. I am currently looking for opportunities to work and grow, and I plan to continue my studies abroad after graduation.
+  </div>
+  <div class="edu-card reveal">
+    <div class="edu-icon">🎓</div>
+    <div>
+      <div class="edu-title">Bachelor of Science in Mathematics</div>
+      <div class="edu-sub">CASPAM — Bahauddin Zakariya University, Multan</div>
+      <div class="edu-meta">📅 2024 – 2028 &nbsp;|&nbsp; 📍 Multan, Pakistan</div>
+      <div class="edu-meta" style="margin-top:6px">Core coursework: Linear Algebra, Real Analysis, Complex Analysis, Abstract Algebra, Topology, Differential Equations, Multivariable Calculus, Probability & Statistics.</div>
+    </div>
+  </div>
+  <div class="edu-card reveal" style="margin-top:1rem">
+    <div class="edu-icon">📘</div>
+    <div>
+      <div class="edu-title">Intermediate in Pre-Engineering / General Science</div>
+      <div class="edu-sub">Government Science College Boys, Multan</div>
+      <div class="edu-meta">📅 2024</div>
+    </div>
+  </div>
+  <div class="edu-card reveal" style="margin-top:1rem">
+    <div class="edu-icon">📗</div>
+    <div>
+      <div class="edu-title">Matriculation</div>
+      <div class="edu-sub">Government Comprehensive Higher Secondary School, Multan</div>
+      <div class="edu-meta">📅 2022</div>
+    </div>
+  </div>
+  <div class="about-text reveal" style="margin:1.5rem 0 0">
+    <strong>Research interests:</strong> Pure & Applied Mathematics (Complex Analysis, Operator Theory, Topological Dynamics, Abstract Algebra) and Computational Modeling (Linear Regression Algorithms, Data Visualization, Numerical Methods).<br/>
+    <strong>Languages:</strong> English (Professional Working), Urdu (Native).
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="reveal">
+    <div class="section-label">Skills</div>
+    <h2 class="section-title">Skills & <span>Technologies</span></h2>
+    <p class="section-sub">The tools I use to build data-driven and AI-powered solutions.</p>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-card-header"><div class="skill-card-icon">💻</div><div class="skill-card-title">Programming & Web</div></div>
+      <div class="chips"><span>Python</span><span>JavaScript</span><span>HTML / CSS</span><span>React</span><span>Next.js</span><span>SQL</span></div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-header"><div class="skill-card-icon">📊</div><div class="skill-card-title">Data & AI</div></div>
+      <div class="chips"><span>Excel Dashboards</span><span>Pivot Tables & Power Query</span><span>pandas / NumPy</span><span>Matplotlib</span><span>Scikit-learn</span><span>Machine Learning</span><span>Data Visualization</span></div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-header"><div class="skill-card-icon">🔧</div><div class="skill-card-title">Tools & Mathematics</div></div>
+      <div class="chips"><span>Git & GitHub</span><span>Supabase</span><span>Jupyter Notebook</span><span>Maple</span><span>GitHub Pages / Vercel</span><span>Mathematical Statistics</span><span>Numerical Analysis</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="reveal">
+    <div class="section-label">Experience</div>
+    <h2 class="section-title">Where I've <span>Worked</span></h2>
+    <p class="section-sub">Leadership, business, and hands-on analysis work.</p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header"><div class="exp-title">Group Lead</div><div class="exp-date">📅 2026 – Present</div></div>
+        <div class="exp-company">Future Builders</div>
+        <ul class="exp-bullets">
+          <li>Lead a group working on AI, coding, software development, and team projects</li>
+          <li>Backend Lead on AI SkillBridge, an AI-powered career and skill development platform</li>
+          <li>Recognized with a Certificate of Appreciation by the Department of Mathematics, BZU Multan</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header"><div class="exp-title">Founder & E-Commerce Manager</div><div class="exp-date">📅 2025 – Present</div></div>
+        <div class="exp-company">RZ Commerce</div>
+        <ul class="exp-bullets">
+          <li>Design, build, and run an online skincare store, from storefront to checkout</li>
+          <li>Manage product listings, customer orders, and WhatsApp-based order handling</li>
+          <li>Handle branding, customer communication, and day-to-day store operations</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header"><div class="exp-title">E-Commerce Seller (Dropshipping)</div><div class="exp-date">📅 2026</div></div>
+        <div class="exp-company">Walmart Marketplace | Independent</div>
+        <ul class="exp-bullets">
+          <li>Ran an independent online dropshipping business selling on Walmart's online marketplace</li>
+          <li>Handled product research, listings, pricing, and order fulfillment through suppliers</li>
+          <li>Managed customer orders and store performance</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-header"><div class="exp-title">Data Analyst & Python Developer</div><div class="exp-date">📅 2024 – Present</div></div>
+        <div class="exp-company">Independent | CASPAM, BZU Multan</div>
+        <ul class="exp-bullets">
+          <li>Analyzed financial data of Pakistan's top 6 companies, presented at FICPFSIT-2026</li>
+          <li>Built a student marks prediction model using gradient descent from scratch</li>
+          <li>Analyzed student performance with Python, pandas, and matplotlib</li>
+          <li>Created interactive Excel dashboards with KPIs, charts, and insight panels</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="reveal">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Things I've <span>Built</span></h2>
+    <p class="section-sub">Data, AI, and web projects, with live demos and source code.</p>
+  </div>
+
+  <div class="filters reveal">
+    <button class="f active" data-f="all">All</button>
+    <button class="f" data-f="web">Web</button>
+    <button class="f" data-f="data">Data & AI</button>
+  </div>
+
+  <div class="projects-grid">
+
+    <div class="proj-card reveal">
+      <div class="proj-thumb t3">📊<div class="proj-tag">Data Analysis</div></div>
+      <div class="proj-body">
+        <div class="proj-name">Pakistani Companies Analysis</div>
+        <div class="proj-tools">Microsoft Excel · Data Visualization</div>
+        <div class="proj-desc">Financial dashboard of PSO, OGDCL, HBL, UBL, Meezan Bank and Lucky Cement. Presented at the international conference FICPFSIT-2026.</div>
+        <div class="proj-links">
+          <a href="https://github.com/Rztech15/Pakistan_Companies_Data_Analysis" class="proj-link" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-thumb t1">🎯<div class="proj-tag">Web</div></div>
+      <div class="proj-body">
+        <div class="proj-name">AI SkillBridge</div>
+        <div class="proj-tools">Team Project · Backend Lead · Future Builders</div>
+        <div class="proj-desc">AI-powered career platform that analyzes education, skills, interests, and goals to build a personalized career roadmap.</div>
+        <div class="proj-links">
+          <a href="https://ai-skillbridge.vercel.app/" class="proj-link" target="_blank" rel="noopener">🌐 Live →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-thumb t2">🛍️<div class="proj-tag">E-Commerce</div></div>
+      <div class="proj-body">
+        <div class="proj-name">RZ Commerce</div>
+        <div class="proj-tools">HTML · CSS · JavaScript</div>
+        <div class="proj-desc">Premium Glutawol skincare store with a dark-gold luxury design, product slider, cart, and WhatsApp checkout. Fully responsive.</div>
+        <div class="proj-links">
+          <a href="https://rztech15.github.io/RZ-Commerce/" class="proj-link" target="_blank" rel="noopener">🌐 Live →</a>
+          <a href="https://github.com/Rztech15/RZ-Commerce" class="proj-link" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-thumb t6" style="background:#000"><img src="rz-ai-logo.png" alt="RZ Data Analytics AI Agent logo" style="height:110px;width:auto" onerror="this.outerHTML='🤖'"/><div class="proj-tag">AI / Data</div></div>
+      <div class="proj-body">
+        <div class="proj-name">RZ Data Analytics AI Agent</div>
+        <div class="proj-tools">Gemini AI · Supabase · Vercel · JavaScript · PWA</div>
+        <div class="proj-desc">Upload a CSV, Excel, or JSON file and get instant dashboards, anomaly detection, and an AI analyst that computes exact answers across the whole dataset, with SQL and report generation. Installable as a PWA.</div>
+        <div class="proj-links">
+          <a href="https://rz-data-analytics-ai-agent.vercel.app/" class="proj-link" target="_blank" rel="noopener">🌐 Live →</a>
+          <a href="https://github.com/Rztech15/RZ-DATA-ANALYTICS-AI-AGENT" class="proj-link" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-thumb t3">📚<div class="proj-tag">Data Analysis</div></div>
+      <div class="proj-body">
+        <div class="proj-name">Student Performance Analysis</div>
+        <div class="proj-tools">Python · pandas · matplotlib · numpy</div>
+        <div class="proj-desc">Analyzed student data to find patterns between study habits, attendance, and grades, with 4 key visualizations.</div>
+        <div class="proj-links">
+          <a href="https://github.com/Rztech15/Student-Performance-Analysis" class="proj-link" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-thumb t5">📈<div class="proj-tag">Machine Learning</div></div>
+      <div class="proj-body">
+        <div class="proj-name">Linear Regression Model</div>
+        <div class="proj-tools">Python · NumPy · Gradient Descent</div>
+        <div class="proj-desc">Student marks prediction built from scratch with multivariate linear regression and gradient descent, no sklearn.</div>
+        <div class="proj-links">
+          <a href="https://github.com/Rztech15/Linear-Regression-Student-Marks" class="proj-link" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-thumb t5" style="background:#000"><img src="stockflow-logo.png" alt="StockFlow logo" style="height:112px;width:auto" onerror="this.outerHTML='📦'"/><div class="proj-tag">Database</div><div class="proj-status">In Progress</div></div>
+      <div class="proj-body">
+        <div class="proj-name">StockFlow</div>
+        <div class="proj-tools">MySQL · HTML · CSS · JavaScript</div>
+        <div class="proj-desc">Inventory and stock management system for small businesses. MySQL schema with triggers that update stock automatically and block overselling, plus a responsive dashboard with low-stock alerts. Backend API in progress.</div>
+        <div class="proj-links">
+          <a href="https://github.com/Rztech15/StockFlow" class="proj-link" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-thumb t1">🌐<div class="proj-tag">Web</div></div>
+      <div class="proj-body">
+        <div class="proj-name">Personal Portfolio Website</div>
+        <div class="proj-tools">HTML · CSS · JavaScript</div>
+        <div class="proj-desc">Dark-themed developer portfolio showcasing projects, skills, and experience. Deployed on GitHub Pages.</div>
+        <div class="proj-links">
+          <a href="https://rztech15.github.io/RZ-Portfolio-Website/" class="proj-link" target="_blank" rel="noopener">🌐 Live →</a>
+          <a href="https://github.com/Rztech15/RZ-Portfolio-Website" class="proj-link" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-thumb t6">👤<div class="proj-tag">GitHub</div></div>
+      <div class="proj-body">
+        <div class="proj-name">GitHub Profile</div>
+        <div class="proj-tools">Markdown · Profile README</div>
+        <div class="proj-desc">Professional GitHub profile with an animated intro, project showcase, and GitHub stats.</div>
+        <div class="proj-links">
+          <a href="https://github.com/Rztech15/Rztech15" class="proj-link" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD A NEW PROJECT: copy a card above, paste it here, and edit the text and links.
+         Tag text decides the filter: Web / E-Commerce / GitHub = Web; Data Analysis / Machine Learning / AI / Data / Database = Data & AI -->
+
+  </div>
+</section>
+
+<!-- UPCOMING -->
+<section id="upcoming" style="background:var(--navy2)">
+  <div class="reveal">
+    <div class="section-label">Coming Soon</div>
+    <h2 class="section-title">What I'm <span>Building Next</span></h2>
+    <p class="section-sub">Projects currently in development.</p>
+  </div>
+  <div class="projects-grid">
+    <div class="proj-card reveal">
+      <div class="proj-thumb t6"><img src="aegis-logo.png" alt="Aegis AI logo" style="height:118px;width:auto" onerror="this.outerHTML='🛡️'"/><div class="proj-tag">Coming Soon</div></div>
+      <div class="proj-body">
+        <div class="proj-name">Aegis-AI</div>
+        <div class="proj-tools">Next.js · Supabase · OpenRouter</div>
+        <div class="proj-desc">A secure messaging app with a built-in safety layer that detects scams and threats in chats and warns users. It also brings multiple AI models into one place.</div>
+        <div class="proj-links">
+          <a href="https://github.com/Rztech15/Aegis-AI/tree/main/aegis-ai-build-fix/safechat" class="proj-link" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates">
+  <div class="reveal">
+    <div class="section-label">Achievements</div>
+    <h2 class="section-title">Certificates & <span>Achievements</span></h2>
+    <p class="section-sub">Recognition and milestones from my academic and professional journey. Tap an image to view it full size.</p>
+  </div>
+  <div class="cert-grid">
+
+    <div class="cert-card reveal">
+      <a class="cert-img-wrap" href="BZU Appreciation.jpeg" target="_blank" rel="noopener"><img src="BZU Appreciation.jpeg" alt="Certificate of Appreciation, Department of Mathematics, BZU Multan" onerror="this.style.display='none'"/></a>
+      <div class="cert-body">
+        <div class="cert-icon">🎖️</div>
+        <div>
+          <div class="cert-title">Certificate of Appreciation — Backend Lead</div>
+          <div class="cert-org">Department of Mathematics, BZU Multan · 17-09-2025</div>
+          <div class="cert-desc">Recognized for the contribution as Backend Lead in developing AI SkillBridge with Team Future Builders.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-body">
+        <div class="cert-icon">🌍</div>
+        <div>
+          <div class="cert-title">Remote Work Revolution for Everyone (WFH_01)</div>
+          <div class="cert-org">HarvardX · edX · Online Course · 2026</div>
+          <div class="cert-desc">Completed a HarvardX course on remote work, offered by Harvard University through edX.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-body">
+        <div class="cert-icon">📈</div>
+        <div>
+          <div class="cert-title">Business Analytics</div>
+          <div class="cert-org">Alison · Online Course</div>
+          <div class="cert-desc">Completed an online course in business analytics through Alison.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <a class="cert-img-wrap" href="FICPFIST-2026(1).jpeg" target="_blank" rel="noopener"><img src="FICPFIST-2026(1).jpeg" alt="FICPFSIT 2026 research poster certificate" onerror="this.style.display='none'"/></a>
+      <div class="cert-body">
+        <div class="cert-icon">🏆</div>
+        <div>
+          <div class="cert-title">FICPFSIT-2026 — Research Poster</div>
+          <div class="cert-org">International Conference</div>
+          <div class="cert-desc">Presented financial data analysis research on Pakistan's top companies at an international academic conference.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <a class="cert-img-wrap" href="FICPFIST-2026(2).jpeg" target="_blank" rel="noopener"><img src="FICPFIST-2026(2).jpeg" alt="FICPFSIT 2026 participation certificate" onerror="this.style.display='none'"/></a>
+      <div class="cert-body">
+        <div class="cert-icon">🎖️</div>
+        <div>
+          <div class="cert-title">FICPFSIT-2026 — Participation</div>
+          <div class="cert-org">International Conference</div>
+          <div class="cert-desc">Official participation recognition at the FICPFSIT-2026 conference on financial and computational sciences.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <a class="cert-img-wrap" href="Code Meet.jpeg" target="_blank" rel="noopener"><img src="Code Meet.jpeg" alt="Code Meet seminar certificate" onerror="this.style.display='none'"/></a>
+      <div class="cert-body">
+        <div class="cert-icon">💻</div>
+        <div>
+          <div class="cert-title">Code Meet Seminar</div>
+          <div class="cert-org">Technology Seminar</div>
+          <div class="cert-desc">Participated in Code Meet, a technology seminar on coding, software development, and modern tech trends.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CV -->
+<section id="cv">
+  <div class="reveal">
+    <div class="section-label">Resume</div>
+    <h2 class="section-title" style="text-align:center">My <span>CV</span></h2>
+    <p class="section-sub" style="margin:0 auto 2rem;">Download my resume for the full picture of my skills and experience.</p>
+  </div>
+  <div class="cv-card reveal">
+    <div class="cv-img-wrap">
+      <img src="CV Image.jpeg" alt="CV preview" onerror="this.style.display='none'"/>
+    </div>
+    <div class="cv-title">Muhammad Ramzan</div>
+    <div class="cv-sub">Data Analyst · Python Developer · Web Developer<br/>BS Mathematics | BZU Multan</div>
+    <a href="Muhammad_Ramzan_CV.pdf" download="Muhammad_Ramzan_CV.pdf" class="btn-primary">📄 Download CV</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="reveal">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-title">Let's Build <span>Together</span></h2>
+    <p class="section-sub">Open to job opportunities, internships, freelance projects, and collaborations.</p>
+  </div>
+  <div class="contact-wrap">
+    <div class="reveal">
+      <div class="contact-info-list">
+        <div class="contact-info-item"><div class="contact-info-icon">📧</div><div><div class="contact-info-label">Email</div><div class="contact-info-val">ramzanbalochmrbaloch@gmail.com</div></div></div>
+        <div class="contact-info-item"><div class="contact-info-icon">📱</div><div><div class="contact-info-label">Phone / WhatsApp</div><div class="contact-info-val">0320-7895540</div></div></div>
+        <div class="contact-info-item"><div class="contact-info-icon">📍</div><div><div class="contact-info-label">Location</div><div class="contact-info-val">Multan, Pakistan</div></div></div>
+        <div class="contact-info-item"><div class="contact-info-icon">🎓</div><div><div class="contact-info-label">University</div><div class="contact-info-val">CASPAM — BZU Multan</div></div></div>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com/Rztech15" class="social-btn" target="_blank" rel="noopener">🐱 GitHub</a>
+        <a href="https://www.linkedin.com/in/muhammad-ramzan-a91510423" class="social-btn" target="_blank" rel="noopener">💼 LinkedIn</a>
+      </div>
+      <a href="https://wa.me/923207895540" class="btn-primary wa-btn" target="_blank" rel="noopener">💬 WhatsApp Me</a>
+    </div>
+    <div class="reveal">
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="John Doe" required/></div>
+          <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@example.com" required/></div>
+        </div>
+        <div class="form-group"><label>Subject</label><input type="text" name="subject" placeholder="Collaboration / Internship / Project" required/></div>
+        <div class="form-group"><label>Message</label><textarea rows="5" name="message" placeholder="Tell me about your project or idea..." required></textarea></div>
+        <button type="submit" class="form-submit" id="submitBtn">📨 Send Message</button>
+        <div id="formMsg" style="display:none; margin-top:1rem; padding:12px; border-radius:10px; font-size:.88rem; text-align:center;"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>Muhammad Ramzan</span> · Data Analyst & Web Developer · Multan, Pakistan</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Project filter
+  const groups = { 'Web':'web', 'E-Commerce':'web', 'GitHub':'web', 'Data Analysis':'data', 'Machine Learning':'data', 'AI / Data':'data', 'Database':'data' };
+  document.querySelectorAll('.f').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('.f').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#projects .proj-card').forEach(card => {
+      const g = groups[card.querySelector('.proj-tag').textContent.trim()];
+      card.style.display = (btn.dataset.f === 'all' || g === btn.dataset.f) ? '' : 'none';
+    });
+  }));
+
+  // Contact form
+  const form = document.getElementById('contactForm');
+  const msg = document.getElementById('formMsg');
+  const btn = document.getElementById('submitBtn');
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    btn.textContent = '⏳ Sending...'; btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/mlgyrvov', { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
+      if (res.ok) {
+        msg.style.display = 'block'; msg.style.background = 'rgba(99,102,241,.15)'; msg.style.border = '1px solid rgba(99,102,241,.4)'; msg.style.color = '#a5b4fc';
+        msg.textContent = '✅ Thank you! I will get back to you within 24 hours.'; form.reset();
+      } else { throw new Error('Failed'); }
+    } catch (err) {
+      msg.style.display = 'block'; msg.style.background = 'rgba(224,64,251,.1)'; msg.style.border = '1px solid rgba(224,64,251,.3)'; msg.style.color = '#f0abfc';
+      msg.textContent = '❌ Message not sent. Please email me at ramzanbalochmrbaloch@gmail.com';
+    }
+    btn.textContent = '📨 Send Message'; btn.disabled = false;
+  });
+</script>
+</body>
+</html>
