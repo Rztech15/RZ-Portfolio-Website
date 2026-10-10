@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rztech15.github.io/RZ-Portfolio-Website/sitemap.xml
