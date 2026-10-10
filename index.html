@@ -9,9 +9,11 @@
 <meta name="keywords" content="Muhammad Ramzan, RZ Tech, Data Analyst Pakistan, Python Developer Multan, Web Developer, RZ Commerce, AI SkillBridge, Future Builders, GitHub rztech15, Portfolio Multan">
 <meta name="author" content="Muhammad Ramzan">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a0a1a">
 <link rel="canonical" href="https://rztech15.github.io/RZ-Portfolio-Website/">
 
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Muhammad Ramzan — Portfolio">
 <meta property="og:url" content="https://rztech15.github.io/RZ-Portfolio-Website/">
 <meta property="og:title" content="Muhammad Ramzan | Data Analyst · Python Developer · Web Developer">
 <meta property="og:description" content="Data Analyst, Python & Web Developer. Group Lead at Future Builders. Research presented at FICPFSIT-2026.">
@@ -35,7 +37,6 @@
   "jobTitle": "Data Analyst & Web Developer",
   "description": "Data Analyst, Python and Web Developer. Group Lead at Future Builders. BS Mathematics, Bahauddin Zakariya University.",
   "email": "ramzanbalochmrbaloch@gmail.com",
-  "telephone": "+923207895540",
   "address": { "@type": "PostalAddress", "addressLocality": "Multan", "addressCountry": "PK" },
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "Bahauddin Zakariya University", "address": "Multan, Pakistan" },
   "sameAs": [
@@ -45,10 +46,12 @@
 }
 </script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 
 <style>
-  :root { --navy:#0a0a1a; --navy2:#0f0f2a; --card:#13132b; --pink:#e040fb; --purple:#7c3aed; --blue:#6366f1;
+  :root { --navy:#0a0a1a; --navy2:#0f0f2a; --card:#13132b; --pink:#e040fb; --purple:#7c3aed; --blue:#818cf8;
     --grad:linear-gradient(135deg,#e040fb,#7c3aed,#6366f1); --grad2:linear-gradient(90deg,#e040fb,#7c3aed);
     --text:#e2e8f0; --muted:#8892a4; --white:#fff; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -58,6 +61,13 @@
   .reveal { opacity:0; transform:translateY(40px); transition:opacity .7s ease, transform .7s ease; }
   .reveal.visible { opacity:1; transform:none; }
   @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .reveal{opacity:1;transform:none;transition:none} }
+
+  section { scroll-margin-top:72px; }
+  .skip { position:absolute; left:-999px; top:8px; background:#fff; color:#000; padding:8px 14px; border-radius:8px; z-index:200; }
+  .skip:focus { left:8px; }
+  .proj-status.live { background:rgba(22,163,74,.8); }
+  .contact-info-val a { color:inherit; text-decoration:none; }
+  .contact-info-val a:hover { color:var(--pink); }
 
   /* NAV */
   nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:16px 5%; background:rgba(10,10,26,.95); backdrop-filter:blur(12px); border-bottom:1px solid rgba(124,58,237,.15); }
@@ -71,8 +81,6 @@
 
   /* HERO */
   #home { min-height:100vh; display:flex; align-items:center; padding:120px 6% 80px; position:relative; overflow:hidden; }
-  #home::before { content:''; position:absolute; top:-200px; right:-200px; width:600px; height:600px; background:radial-gradient(circle,rgba(124,58,237,.15) 0%,transparent 70%); border-radius:50%; }
-  #home::after { content:''; position:absolute; bottom:-200px; left:-200px; width:500px; height:500px; background:radial-gradient(circle,rgba(224,64,251,.1) 0%,transparent 70%); border-radius:50%; }
   .hero-wrap { display:flex; align-items:center; justify-content:space-between; gap:3rem; width:100%; position:relative; z-index:1; }
   .hero-left { flex:1; }
   .hero-badge { display:inline-block; background:rgba(124,58,237,.2); border:1px solid rgba(124,58,237,.4); border-radius:50px; padding:6px 18px; font-size:.8rem; color:var(--blue); font-weight:500; margin-bottom:1.2rem; letter-spacing:.03em; }
@@ -81,12 +89,12 @@
   .hero-tagline { font-size:1.1rem; font-weight:700; color:var(--pink); margin-bottom:1rem; }
   .hero-sub { font-size:.97rem; color:var(--muted); max-width:480px; margin-bottom:2.5rem; line-height:1.8; }
   .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; }
-  .btn-primary { background:var(--grad); color:#fff; border:none; padding:12px 28px; border-radius:50px; font-size:.9rem; font-weight:600; cursor:pointer; text-decoration:none; transition:opacity .2s, transform .2s; display:inline-flex; align-items:center; gap:8px; box-shadow:0 0 20px rgba(124,58,237,.35); }
+  .btn-primary { background:var(--grad); color:#fff; border:none; padding:12px 28px; border-radius:50px; font-size:.9rem; font-weight:600; cursor:pointer; text-decoration:none; transition:opacity .2s, transform .2s; display:inline-flex; align-items:center; gap:8px;  }
   .btn-primary:hover { opacity:.88; transform:translateY(-2px); }
   .btn-outline { background:transparent; color:var(--text); border:1px solid rgba(124,58,237,.5); padding:12px 28px; border-radius:50px; font-size:.9rem; font-weight:600; cursor:pointer; text-decoration:none; transition:border-color .2s, transform .2s; display:inline-flex; align-items:center; gap:8px; }
   .btn-outline:hover { border-color:var(--pink); transform:translateY(-2px); }
   .hero-right { flex-shrink:0; }
-  .profile-pic-wrap { width:260px; height:260px; border-radius:50%; background:var(--grad); padding:4px; box-shadow:0 0 50px rgba(124,58,237,.4), 0 0 100px rgba(224,64,251,.15); }
+  .profile-pic-wrap { width:260px; height:260px; border-radius:50%; background:var(--grad); padding:4px;  }
   .profile-pic-wrap img { width:100%; height:100%; border-radius:50%; object-fit:cover; border:4px solid var(--navy); }
   .profile-pic-placeholder { width:100%; height:100%; border-radius:50%; background:var(--card); border:4px solid var(--navy); display:flex; align-items:center; justify-content:center; font-size:5rem; }
 
@@ -177,7 +185,7 @@
   /* CV */
   #cv { text-align:center; }
   .cv-card { max-width:500px; margin:0 auto; background:var(--card); border:1px solid rgba(124,58,237,.25); border-radius:20px; padding:3rem 2rem; }
-  .cv-img-wrap { width:110px; height:150px; margin:0 auto 1.5rem; border-radius:12px; overflow:hidden; border:2px solid rgba(124,58,237,.4); box-shadow:0 0 20px rgba(124,58,237,.2); }
+  .cv-img-wrap { width:110px; height:150px; margin:0 auto 1.5rem; border-radius:12px; overflow:hidden; border:2px solid rgba(124,58,237,.4);  }
   .cv-img-wrap img { width:100%; height:100%; object-fit:cover; }
   .cv-title { font-size:1.4rem; font-weight:800; color:var(--white); margin-bottom:.4rem; }
   .cv-sub { color:var(--muted); margin-bottom:2rem; font-size:.88rem; line-height:1.6; }
@@ -201,7 +209,7 @@
   .form-group input, .form-group textarea { background:var(--card); border:1px solid rgba(124,58,237,.2); border-radius:10px; padding:12px 14px; color:var(--text); font-size:.88rem; font-family:'Inter',sans-serif; transition:border-color .2s; resize:vertical; }
   .form-group input:focus, .form-group textarea:focus { outline:none; border-color:var(--purple); }
   .form-group input::placeholder, .form-group textarea::placeholder { color:rgba(136,146,164,.5); }
-  .form-submit { background:var(--grad); color:#fff; border:none; padding:14px; border-radius:50px; font-size:.95rem; font-weight:600; cursor:pointer; transition:opacity .2s, transform .2s; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow:0 0 20px rgba(124,58,237,.3); }
+  .form-submit { background:var(--grad); color:#fff; border:none; padding:14px; border-radius:50px; font-size:.95rem; font-weight:600; cursor:pointer; transition:opacity .2s, transform .2s; display:flex; align-items:center; justify-content:center; gap:8px;  }
   .form-submit:hover { opacity:.88; transform:translateY(-2px); }
 
   footer { text-align:center; padding:2.5rem 6%; color:var(--muted); font-size:.85rem; border-top:1px solid rgba(124,58,237,.1); }
@@ -221,9 +229,10 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <!-- NAVBAR -->
-<nav>
+<nav aria-label="Main">
   <div class="logo"><span class="logo-rz">RZ</span><span class="logo-dot">·</span><span class="logo-dev">Dev</span></div>
   <div class="nav-links">
     <a href="#home">Home</a>
@@ -238,6 +247,7 @@
   </div>
 </nav>
 
+<main id="main">
 <!-- HERO -->
 <section id="home">
   <div class="hero-wrap">
@@ -245,10 +255,10 @@
       <div class="hero-badge">Data Analyst · Python Developer · Web Developer</div>
       <h1 class="hero-title">Hi, I'm<br><span>Muhammad Ramzan</span></h1>
       <p class="hero-tagline">I turn data into decisions and ideas into shipped products.</p>
-      <p class="hero-sub">Group Lead at Future Builders and founder of RZ Commerce. I build data analyses, machine learning models, and web platforms with Python, Excel, and modern web technologies.</p>
+      <p class="hero-sub">Group Lead at Future Builders and founder of RZ Commerce. I build data analyses, machine learning models, and web platforms with Python, Excel, and modern web technologies. Open to internships, work opportunities, and collaborations.</p>
       <div class="hero-btns">
         <a href="#projects" class="btn-primary">🚀 View Projects</a>
-        <a href="#cv" class="btn-outline">📄 Download CV</a>
+        <a href="#cv" class="btn-outline">📄 Resume</a>
       </div>
     </div>
     <div class="hero-right reveal">
@@ -315,15 +325,15 @@
   </div>
   <div class="skills-grid">
     <div class="skill-card reveal">
-      <div class="skill-card-header"><div class="skill-card-icon">💻</div><div class="skill-card-title">Programming & Web</div></div>
+      <div class="skill-card-header"><div class="skill-card-icon">💻</div><h3 class="skill-card-title">Programming & Web</h3></div>
       <div class="chips"><span>Python</span><span>JavaScript</span><span>HTML / CSS</span><span>React</span><span>Next.js</span><span>SQL</span></div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-card-header"><div class="skill-card-icon">📊</div><div class="skill-card-title">Data & AI</div></div>
+      <div class="skill-card-header"><div class="skill-card-icon">📊</div><h3 class="skill-card-title">Data & AI</h3></div>
       <div class="chips"><span>Excel Dashboards</span><span>Pivot Tables & Power Query</span><span>pandas / NumPy</span><span>Matplotlib</span><span>Scikit-learn</span><span>Machine Learning</span><span>Data Visualization</span></div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-card-header"><div class="skill-card-icon">🔧</div><div class="skill-card-title">Tools & Mathematics</div></div>
+      <div class="skill-card-header"><div class="skill-card-icon">🔧</div><h3 class="skill-card-title">Tools & Mathematics</h3></div>
       <div class="chips"><span>Git & GitHub</span><span>Supabase</span><span>Jupyter Notebook</span><span>Maple</span><span>GitHub Pages / Vercel</span><span>Mathematical Statistics</span><span>Numerical Analysis</span></div>
     </div>
   </div>
@@ -340,7 +350,7 @@
     <div class="timeline-item reveal">
       <div class="timeline-dot"></div>
       <div class="exp-card">
-        <div class="exp-header"><div class="exp-title">Group Lead</div><div class="exp-date">📅 2026 – Present</div></div>
+        <div class="exp-header"><h3 class="exp-title">Group Lead</h3><div class="exp-date">📅 2026 – Present</div></div>
         <div class="exp-company">Future Builders</div>
         <ul class="exp-bullets">
           <li>Lead a group working on AI, coding, software development, and team projects</li>
@@ -352,7 +362,7 @@
     <div class="timeline-item reveal">
       <div class="timeline-dot"></div>
       <div class="exp-card">
-        <div class="exp-header"><div class="exp-title">Founder & E-Commerce Manager</div><div class="exp-date">📅 2025 – Present</div></div>
+        <div class="exp-header"><h3 class="exp-title">Founder & E-Commerce Manager</h3><div class="exp-date">📅 2025 – Present</div></div>
         <div class="exp-company">RZ Commerce</div>
         <ul class="exp-bullets">
           <li>Design, build, and run an online skincare store, from storefront to checkout</li>
@@ -364,7 +374,7 @@
     <div class="timeline-item reveal">
       <div class="timeline-dot"></div>
       <div class="exp-card">
-        <div class="exp-header"><div class="exp-title">E-Commerce Seller (Dropshipping)</div><div class="exp-date">📅 2026</div></div>
+        <div class="exp-header"><h3 class="exp-title">E-Commerce Seller (Dropshipping)</h3><div class="exp-date">📅 2026</div></div>
         <div class="exp-company">Walmart Marketplace | Independent</div>
         <ul class="exp-bullets">
           <li>Ran an independent online dropshipping business selling on Walmart's online marketplace</li>
@@ -376,7 +386,7 @@
     <div class="timeline-item reveal">
       <div class="timeline-dot"></div>
       <div class="exp-card">
-        <div class="exp-header"><div class="exp-title">Data Analyst & Python Developer</div><div class="exp-date">📅 2024 – Present</div></div>
+        <div class="exp-header"><h3 class="exp-title">Data Analyst & Python Developer</h3><div class="exp-date">📅 2024 – Present</div></div>
         <div class="exp-company">Independent | CASPAM, BZU Multan</div>
         <ul class="exp-bullets">
           <li>Analyzed financial data of Pakistan's top 6 companies, presented at FICPFSIT-2026</li>
@@ -398,9 +408,9 @@
   </div>
 
   <div class="filters reveal">
-    <button class="f active" data-f="all">All</button>
-    <button class="f" data-f="web">Web</button>
-    <button class="f" data-f="data">Data & AI</button>
+    <button class="f active" aria-pressed="true" data-f="all">All</button>
+    <button class="f" aria-pressed="false" data-f="web">Web</button>
+    <button class="f" aria-pressed="false" data-f="data">Data & AI</button>
   </div>
 
   <div class="projects-grid">
@@ -408,7 +418,7 @@
     <div class="proj-card reveal">
       <div class="proj-thumb t3">📊<div class="proj-tag">Data Analysis</div></div>
       <div class="proj-body">
-        <div class="proj-name">Pakistani Companies Analysis</div>
+        <h3 class="proj-name">Pakistani Companies Analysis</h3>
         <div class="proj-tools">Microsoft Excel · Data Visualization</div>
         <div class="proj-desc">Financial dashboard of PSO, OGDCL, HBL, UBL, Meezan Bank and Lucky Cement. Presented at the international conference FICPFSIT-2026.</div>
         <div class="proj-links">
@@ -418,9 +428,9 @@
     </div>
 
     <div class="proj-card reveal">
-      <div class="proj-thumb t1">🎯<div class="proj-tag">Web</div></div>
+      <div class="proj-thumb t1">🎯<div class="proj-tag">Web</div><div class="proj-status live">Live</div></div>
       <div class="proj-body">
-        <div class="proj-name">AI SkillBridge</div>
+        <h3 class="proj-name">AI SkillBridge</h3>
         <div class="proj-tools">Team Project · Backend Lead · Future Builders</div>
         <div class="proj-desc">AI-powered career platform that analyzes education, skills, interests, and goals to build a personalized career roadmap.</div>
         <div class="proj-links">
@@ -430,9 +440,9 @@
     </div>
 
     <div class="proj-card reveal">
-      <div class="proj-thumb t2">🛍️<div class="proj-tag">E-Commerce</div></div>
+      <div class="proj-thumb t2">🛍️<div class="proj-tag">E-Commerce</div><div class="proj-status live">Live</div></div>
       <div class="proj-body">
-        <div class="proj-name">RZ Commerce</div>
+        <h3 class="proj-name">RZ Commerce</h3>
         <div class="proj-tools">HTML · CSS · JavaScript</div>
         <div class="proj-desc">Premium Glutawol skincare store with a dark-gold luxury design, product slider, cart, and WhatsApp checkout. Fully responsive.</div>
         <div class="proj-links">
@@ -443,9 +453,9 @@
     </div>
 
     <div class="proj-card reveal">
-      <div class="proj-thumb t6" style="background:#000"><img src="rz-ai-logo.png" alt="RZ Data Analytics AI Agent logo" style="height:110px;width:auto" onerror="this.outerHTML='🤖'"/><div class="proj-tag">AI / Data</div></div>
+      <div class="proj-thumb t6" style="background:#000"><img src="rz-ai-logo.png" alt="RZ Data Analytics AI Agent logo" style="height:110px;width:auto" onerror="this.outerHTML='🤖'"/><div class="proj-tag">AI / Data</div><div class="proj-status live">Live</div></div>
       <div class="proj-body">
-        <div class="proj-name">RZ Data Analytics AI Agent</div>
+        <h3 class="proj-name">RZ Data Analytics AI Agent</h3>
         <div class="proj-tools">Gemini AI · Supabase · Vercel · JavaScript · PWA</div>
         <div class="proj-desc">Upload a CSV, Excel, or JSON file and get instant dashboards, anomaly detection, and an AI analyst that computes exact answers across the whole dataset, with SQL and report generation. Installable as a PWA.</div>
         <div class="proj-links">
@@ -458,7 +468,7 @@
     <div class="proj-card reveal">
       <div class="proj-thumb t3">📚<div class="proj-tag">Data Analysis</div></div>
       <div class="proj-body">
-        <div class="proj-name">Student Performance Analysis</div>
+        <h3 class="proj-name">Student Performance Analysis</h3>
         <div class="proj-tools">Python · pandas · matplotlib · numpy</div>
         <div class="proj-desc">Analyzed student data to find patterns between study habits, attendance, and grades, with 4 key visualizations.</div>
         <div class="proj-links">
@@ -470,7 +480,7 @@
     <div class="proj-card reveal">
       <div class="proj-thumb t5">📈<div class="proj-tag">Machine Learning</div></div>
       <div class="proj-body">
-        <div class="proj-name">Linear Regression Model</div>
+        <h3 class="proj-name">Linear Regression Model</h3>
         <div class="proj-tools">Python · NumPy · Gradient Descent</div>
         <div class="proj-desc">Student marks prediction built from scratch with multivariate linear regression and gradient descent, no sklearn.</div>
         <div class="proj-links">
@@ -482,7 +492,7 @@
     <div class="proj-card reveal">
       <div class="proj-thumb t5" style="background:#000"><img src="stockflow-logo.png" alt="StockFlow logo" style="height:112px;width:auto" onerror="this.outerHTML='📦'"/><div class="proj-tag">Database</div><div class="proj-status">In Progress</div></div>
       <div class="proj-body">
-        <div class="proj-name">StockFlow</div>
+        <h3 class="proj-name">StockFlow</h3>
         <div class="proj-tools">MySQL · HTML · CSS · JavaScript</div>
         <div class="proj-desc">Inventory and stock management system for small businesses. MySQL schema with triggers that update stock automatically and block overselling, plus a responsive dashboard with low-stock alerts. Backend API in progress.</div>
         <div class="proj-links">
@@ -492,9 +502,9 @@
     </div>
 
     <div class="proj-card reveal">
-      <div class="proj-thumb t1">🌐<div class="proj-tag">Web</div></div>
+      <div class="proj-thumb t1">🌐<div class="proj-tag">Web</div><div class="proj-status live">Live</div></div>
       <div class="proj-body">
-        <div class="proj-name">Personal Portfolio Website</div>
+        <h3 class="proj-name">Personal Portfolio Website</h3>
         <div class="proj-tools">HTML · CSS · JavaScript</div>
         <div class="proj-desc">Dark-themed developer portfolio showcasing projects, skills, and experience. Deployed on GitHub Pages.</div>
         <div class="proj-links">
@@ -507,7 +517,7 @@
     <div class="proj-card reveal">
       <div class="proj-thumb t6">👤<div class="proj-tag">GitHub</div></div>
       <div class="proj-body">
-        <div class="proj-name">GitHub Profile</div>
+        <h3 class="proj-name">GitHub Profile</h3>
         <div class="proj-tools">Markdown · Profile README</div>
         <div class="proj-desc">Professional GitHub profile with an animated intro, project showcase, and GitHub stats.</div>
         <div class="proj-links">
@@ -533,7 +543,7 @@
     <div class="proj-card reveal">
       <div class="proj-thumb t6"><img src="aegis-logo.png" alt="Aegis AI logo" style="height:118px;width:auto" onerror="this.outerHTML='🛡️'"/><div class="proj-tag">Coming Soon</div></div>
       <div class="proj-body">
-        <div class="proj-name">Aegis-AI</div>
+        <h3 class="proj-name">Aegis-AI</h3>
         <div class="proj-tools">Next.js · Supabase · OpenRouter</div>
         <div class="proj-desc">A secure messaging app with a built-in safety layer that detects scams and threats in chats and warns users. It also brings multiple AI models into one place.</div>
         <div class="proj-links">
@@ -554,11 +564,11 @@
   <div class="cert-grid">
 
     <div class="cert-card reveal">
-      <a class="cert-img-wrap" href="BZU Appreciation.jpeg" target="_blank" rel="noopener"><img src="BZU Appreciation.jpeg" alt="Certificate of Appreciation, Department of Mathematics, BZU Multan" onerror="this.style.display='none'"/></a>
+      <a class="cert-img-wrap" href="BZU Appreciation.jpeg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="BZU Appreciation.jpeg" alt="Certificate of Appreciation, Department of Mathematics, BZU Multan" onerror="this.style.display='none'"/></a>
       <div class="cert-body">
         <div class="cert-icon">🎖️</div>
         <div>
-          <div class="cert-title">Certificate of Appreciation — Backend Lead</div>
+          <h3 class="cert-title">Certificate of Appreciation — Backend Lead</h3>
           <div class="cert-org">Department of Mathematics, BZU Multan · 17-09-2026</div>
           <div class="cert-desc">Recognized for the contribution as Backend Lead in developing AI SkillBridge with Team Future Builders.</div>
         </div>
@@ -569,7 +579,7 @@
       <div class="cert-body">
         <div class="cert-icon">🌍</div>
         <div>
-          <div class="cert-title">Remote Work Revolution for Everyone (WFH_01)</div>
+          <h3 class="cert-title">Remote Work Revolution for Everyone (WFH_01)</h3>
           <div class="cert-org">HarvardX · edX · Online Course · 2026</div>
           <div class="cert-desc">Completed a HarvardX course on remote work, offered by Harvard University through edX.</div>
         </div>
@@ -580,7 +590,7 @@
       <div class="cert-body">
         <div class="cert-icon">📈</div>
         <div>
-          <div class="cert-title">Business Analytics</div>
+          <h3 class="cert-title">Business Analytics</h3>
           <div class="cert-org">Alison · Online Course</div>
           <div class="cert-desc">Completed an online course in business analytics through Alison.</div>
         </div>
@@ -588,11 +598,11 @@
     </div>
 
     <div class="cert-card reveal">
-      <a class="cert-img-wrap" href="FICPFIST-2026(1).jpeg" target="_blank" rel="noopener"><img src="FICPFIST-2026(1).jpeg" alt="FICPFSIT 2026 research poster certificate" onerror="this.style.display='none'"/></a>
+      <a class="cert-img-wrap" href="FICPFIST-2026(1).jpeg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="FICPFIST-2026(1).jpeg" alt="FICPFSIT 2026 research poster certificate" onerror="this.style.display='none'"/></a>
       <div class="cert-body">
         <div class="cert-icon">🏆</div>
         <div>
-          <div class="cert-title">FICPFSIT-2026 — Research Poster</div>
+          <h3 class="cert-title">FICPFSIT-2026 — Research Poster</h3>
           <div class="cert-org">International Conference</div>
           <div class="cert-desc">Presented financial data analysis research on Pakistan's top companies at an international academic conference.</div>
         </div>
@@ -600,11 +610,11 @@
     </div>
 
     <div class="cert-card reveal">
-      <a class="cert-img-wrap" href="FICPFIST-2026(2).jpeg" target="_blank" rel="noopener"><img src="FICPFIST-2026(2).jpeg" alt="FICPFSIT 2026 participation certificate" onerror="this.style.display='none'"/></a>
+      <a class="cert-img-wrap" href="FICPFIST-2026(2).jpeg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="FICPFIST-2026(2).jpeg" alt="FICPFSIT 2026 participation certificate" onerror="this.style.display='none'"/></a>
       <div class="cert-body">
         <div class="cert-icon">🎖️</div>
         <div>
-          <div class="cert-title">FICPFSIT-2026 — Participation</div>
+          <h3 class="cert-title">FICPFSIT-2026 — Participation</h3>
           <div class="cert-org">International Conference</div>
           <div class="cert-desc">Official participation recognition at the FICPFSIT-2026 conference on financial and computational sciences.</div>
         </div>
@@ -612,11 +622,11 @@
     </div>
 
     <div class="cert-card reveal">
-      <a class="cert-img-wrap" href="Code Meet.jpeg" target="_blank" rel="noopener"><img src="Code Meet.jpeg" alt="Code Meet seminar certificate" onerror="this.style.display='none'"/></a>
+      <a class="cert-img-wrap" href="Code Meet.jpeg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Code Meet.jpeg" alt="Code Meet seminar certificate" onerror="this.style.display='none'"/></a>
       <div class="cert-body">
         <div class="cert-icon">💻</div>
         <div>
-          <div class="cert-title">Code Meet Seminar</div>
+          <h3 class="cert-title">Code Meet Seminar</h3>
           <div class="cert-org">Technology Seminar</div>
           <div class="cert-desc">Participated in Code Meet, a technology seminar on coding, software development, and modern tech trends.</div>
         </div>
@@ -635,7 +645,7 @@
   </div>
   <div class="cv-card reveal">
     <div class="cv-img-wrap">
-      <img src="CV Image.jpeg" alt="CV preview" onerror="this.style.display='none'"/>
+      <img loading="lazy" src="CV Image.jpeg" alt="CV preview" onerror="this.style.display='none'"/>
     </div>
     <div class="cv-title">Muhammad Ramzan</div>
     <div class="cv-sub">Data Analyst · Python Developer · Web Developer<br/>BS Mathematics | BZU Multan</div>
@@ -653,8 +663,8 @@
   <div class="contact-wrap">
     <div class="reveal">
       <div class="contact-info-list">
-        <div class="contact-info-item"><div class="contact-info-icon">📧</div><div><div class="contact-info-label">Email</div><div class="contact-info-val">ramzanbalochmrbaloch@gmail.com</div></div></div>
-        <div class="contact-info-item"><div class="contact-info-icon">📱</div><div><div class="contact-info-label">Phone / WhatsApp</div><div class="contact-info-val">0320-7895540</div></div></div>
+        <div class="contact-info-item"><div class="contact-info-icon">📧</div><div><div class="contact-info-label">Email</div><div class="contact-info-val"><a href="mailto:ramzanbalochmrbaloch@gmail.com">ramzanbalochmrbaloch@gmail.com</a></div></div></div>
+        <div class="contact-info-item"><div class="contact-info-icon">📱</div><div><div class="contact-info-label">Phone / WhatsApp</div><div class="contact-info-val"><a href="tel:+923207895540">0320-7895540</a></div></div></div>
         <div class="contact-info-item"><div class="contact-info-icon">📍</div><div><div class="contact-info-label">Location</div><div class="contact-info-val">Multan, Pakistan</div></div></div>
         <div class="contact-info-item"><div class="contact-info-icon">🎓</div><div><div class="contact-info-label">University</div><div class="contact-info-val">CASPAM — BZU Multan</div></div></div>
       </div>
@@ -667,17 +677,19 @@
     <div class="reveal">
       <form class="contact-form" id="contactForm">
         <div class="form-row">
-          <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="John Doe" required/></div>
-          <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@example.com" required/></div>
+          <div class="form-group"><label for="f-name">Your Name</label><input id="f-name" autocomplete="name" type="text" name="name" placeholder="John Doe" required/></div>
+          <div class="form-group"><label for="f-email">Email</label><input id="f-email" autocomplete="email" type="email" name="email" placeholder="you@example.com" required/></div>
         </div>
-        <div class="form-group"><label>Subject</label><input type="text" name="subject" placeholder="Collaboration / Internship / Project" required/></div>
-        <div class="form-group"><label>Message</label><textarea rows="5" name="message" placeholder="Tell me about your project or idea..." required></textarea></div>
+        <div class="form-group"><label for="f-subject">Subject</label><input id="f-subject" type="text" name="subject" placeholder="Collaboration / Internship / Project" required/></div>
+        <div class="form-group"><label for="f-message">Message</label><textarea id="f-message" rows="5" name="message" placeholder="Tell me about your project or idea..." required></textarea></div>
         <button type="submit" class="form-submit" id="submitBtn">📨 Send Message</button>
-        <div id="formMsg" style="display:none; margin-top:1rem; padding:12px; border-radius:10px; font-size:.88rem; text-align:center;"></div>
+        <div id="formMsg" role="status" aria-live="polite" style="display:none; margin-top:1rem; padding:12px; border-radius:10px; font-size:.88rem; text-align:center;"></div>
       </form>
     </div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <p>© 2026 <span>Muhammad Ramzan</span> · Data Analyst & Web Developer · Multan, Pakistan</p>
@@ -693,8 +705,8 @@
   // Project filter
   const groups = { 'Web':'web', 'E-Commerce':'web', 'GitHub':'web', 'Data Analysis':'data', 'Machine Learning':'data', 'AI / Data':'data', 'Database':'data' };
   document.querySelectorAll('.f').forEach(btn => btn.addEventListener('click', () => {
-    document.querySelectorAll('.f').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    document.querySelectorAll('.f').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+    btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
     document.querySelectorAll('#projects .proj-card').forEach(card => {
       const g = groups[card.querySelector('.proj-tag').textContent.trim()];
       card.style.display = (btn.dataset.f === 'all' || g === btn.dataset.f) ? '' : 'none';
