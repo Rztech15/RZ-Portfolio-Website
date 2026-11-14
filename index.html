@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -16,14 +16,14 @@
 <style>
 :root{--obs:#0D0D0F;--char:#1F1F23;--gra:#292B30;--steel:#41454B;--ti:#AEB6BD;--sw:#E1E5E9;--tx:#F8FAFC;--tx2:#A1A1AA;--mu:#71717A;--metal:linear-gradient(135deg,#E1E5E9,#AEB6BD 55%,#8A9299);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *,*::before,*::after{box-sizing:inherit;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
+html{scroll-behavior:smooth;scroll-padding-top:76px}body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(600px 420px at 12% 18%,rgba(174,182,189,.12),transparent 70%),radial-gradient(520px 420px at 88% 65%,rgba(225,229,233,.09),transparent 70%)}
 body{background:var(--obs);color:var(--tx);font:400 1rem/1.7 Inter,system-ui,sans-serif;overflow-x:hidden}
 h1,h2,h3{font-family:Manrope,Inter,sans-serif;line-height:1.15}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--sw);outline-offset:3px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 5%}
 section{padding:96px 0}
-section:nth-of-type(even){background:var(--char)}
+section:nth-of-type(even){background:rgba(31,31,35,.6)}
 h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-bottom:.6rem}
 .lead{color:var(--tx2);max-width:60ch;margin-bottom:2.5rem}
 .skip{position:absolute;left:-999px;top:8px;background:var(--sw);color:#000;padding:8px 14px;border-radius:6px;z-index:300}.skip:focus{left:8px}
@@ -36,3 +36,253 @@ nav ul{display:flex;gap:1.6rem;list-style:none}
 nav a{color:var(--tx2);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}nav a:hover{color:var(--tx)}
 .burger{display:none;background:none;border:1px solid var(--steel);color:var(--tx);border-radius:8px;width:44px;height:44px;font-size:1.3rem;cursor:pointer}
 @media(max-width:820px){.burger{display:block}nav{position:absolute;top:100%;left:0;right:0;background:var(--char);border-bottom:1px solid var(--steel);display:none}nav.open{display:block}nav ul{flex-direction:column;gap:0;padding:.5rem 5%}nav a{display:block;padding:14px 0;border-bottom:1px solid var(--gra)}}
+/* hero */
+#home{min-height:100svh;display:flex;align-items:center;padding:110px 0 70px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 40%,#2a2c31 0,var(--obs) 62%)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+#stage{position:relative;aspect-ratio:1;width:100%;max-width:480px;margin-left:auto}
+#stage canvas{width:100%!important;height:100%!important;display:block}
+.fallback{position:absolute;inset:12%;border-radius:50%;border:1px solid var(--ti);background:var(--metal);opacity:.25}
+.kicker{color:var(--ti);font-weight:600;margin-bottom:1rem;min-height:1.7em}.hero{position:relative;z-index:1}.sym{position:absolute;inset:0;pointer-events:none}.sym i{position:absolute;font:700 clamp(2.2rem,6vw,4.5rem) Manrope;font-style:normal;color:var(--ti);opacity:.08;animation:fl 14s ease-in-out infinite}.sym i:nth-child(1){left:6%;top:18%}.sym i:nth-child(2){left:44%;top:12%;animation-delay:-3s}.sym i:nth-child(3){left:88%;top:22%;animation-delay:-6s}.sym i:nth-child(4){left:12%;top:78%;animation-delay:-9s}.sym i:nth-child(5){left:52%;top:84%;animation-delay:-4s}.sym i:nth-child(6){left:82%;top:74%;animation-delay:-11s}@keyframes fl{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-26px)}}@media(prefers-reduced-motion:reduce){.sym i{animation:none}}h2::after{content:"";display:block;width:56px;height:3px;margin-top:.6rem;background:var(--metal);border-radius:2px}
+h1{font-size:clamp(2.4rem,6.5vw,4.6rem);font-weight:800;letter-spacing:-.02em;background:linear-gradient(110deg,transparent 42%,rgba(255,255,255,.9) 50%,transparent 58%) 0 0/250% 100% no-repeat,var(--metal);-webkit-background-clip:text;background-clip:text;color:var(--sw);-webkit-text-fill-color:transparent;margin-bottom:1rem;filter:drop-shadow(0 2px 0 #555a61) drop-shadow(0 4px 0 #41454B) drop-shadow(0 10px 14px rgba(0,0,0,.65));animation:shine 6s ease-in-out infinite}@media(prefers-reduced-motion:reduce){h1{animation:none}}
+.tag{font:700 1.25rem Manrope;margin-bottom:1rem}
+.intro{color:var(--tx2);max-width:52ch;margin-bottom:2rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.btn{display:inline-block;padding:12px 26px;border-radius:8px;font-weight:600;text-decoration:none;border:1px solid var(--ti);transition:transform .2s,background .2s}
+.btn.p{background:var(--metal);color:#0D0D0F;border-color:transparent}.btn:hover{transform:translateY(-2px)}.btn.s:hover{background:var(--gra)}
+.links a{color:var(--tx2);margin-right:1.2rem;text-underline-offset:4px}.links a:hover{color:var(--tx)}
+@media(max-width:820px){.hero{grid-template-columns:1fr}#stage{max-width:300px;margin:0 auto;order:-1}}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem}
+.card{background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02) 45%,rgba(41,43,48,.6));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--steel);border-radius:12px;padding:1.6rem}
+.card h3{font-size:1.05rem;margin-bottom:.7rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chips span{font-size:.8rem;padding:4px 12px;border:1px solid var(--steel);border-radius:6px;color:var(--sw);background:var(--char)}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:2.5rem}
+.about p+p{margin-top:1rem}.about p{color:var(--tx2)}.about strong{color:var(--tx)}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+/* projects */
+.spatial{perspective:1100px}
+.proj{display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s;will-change:transform}
+.proj:hover{box-shadow:0 24px 40px rgba(0,0,0,.45)}
+.proj.feat{grid-column:1/-1}
+.proj .cat{font-size:.78rem;color:var(--ti);font-weight:600;margin-bottom:.5rem}
+.proj h3{font-size:1.25rem}
+.proj p{color:var(--tx2);font-size:.92rem;margin:.6rem 0 1rem;flex:1}
+.proj .chips{margin-bottom:1.1rem}
+.proj .l{display:flex;gap:.6rem;flex-wrap:wrap}.proj .l a{text-decoration:none;font-weight:600;font-size:.85rem;padding:7px 16px;border:1px solid var(--ti);border-radius:8px;transition:background .2s,color .2s}.proj .l a:hover{background:var(--sw);color:#0D0D0F}
+.note{font-size:.8rem;color:var(--mu);margin-top:1.4rem}
+/* timeline */
+.tl{border-left:1px solid var(--steel);padding-left:1.8rem}
+.tl .card{margin-bottom:1.2rem;position:relative}
+.tl .card::before{content:"";position:absolute;left:calc(-1.8rem - 5px);top:2rem;width:9px;height:9px;border-radius:50%;background:var(--ti)}
+.meta{color:var(--ti);font-size:.85rem;margin-bottom:.6rem}
+ul.pts{list-style:none}ul.pts li{color:var(--tx2);font-size:.92rem;padding:3px 0 3px 1.1rem;position:relative}ul.pts li::before{content:"–";position:absolute;left:0;color:var(--ti)}
+/* certs, contact */
+.cert{text-decoration:none;display:block;transition:transform .25s ease}.cert:hover{filter:brightness(1.1)}
+.cert p{color:var(--tx2);font-size:.85rem}.cert .meta{margin-bottom:.3rem}@property --a{syntax:'<angle>';inherits:false;initial-value:0deg}@keyframes spin{to{--a:360deg}}.mb,.cert,.proj{position:relative;overflow:hidden;border:2px solid transparent;background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.02) 45%,transparent) padding-box,linear-gradient(rgba(20,21,24,.88),rgba(20,21,24,.88)) padding-box,linear-gradient(105deg,transparent 40%,#fff 50%,transparent 60%) 0 0/250% 100% no-repeat border-box,linear-gradient(135deg,#8A9299,#41454B 50%,#8A9299) border-box;box-shadow:0 0 16px rgba(225,229,233,.08),0 14px 30px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.3),inset 0 -1px 0 rgba(0,0,0,.5);animation:bshine 5s ease-in-out infinite}@keyframes bshine{0%{background-position:0 0,0 0,150% 0,0 0}60%,100%{background-position:0 0,0 0,-50% 0,0 0}}.proj:nth-child(2n){animation-delay:-1.7s}.proj:nth-child(3n){animation-delay:-3.4s}.mb:hover,.cert:hover,.proj:hover{animation-duration:2.2s;box-shadow:0 0 36px rgba(225,229,233,.3),0 14px 30px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(0,0,0,.5)}.mb::before,.cert::before,.proj::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.14),transparent 60%);opacity:0;transition:opacity .3s}.mb:hover::before,.cert:hover::before,.proj:hover::before{opacity:1}.mb::after,.cert::after,.proj::after{content:"";position:absolute;top:0;left:-70%;width:40%;height:100%;pointer-events:none;background:linear-gradient(105deg,transparent,rgba(255,255,255,.2),transparent);transform:skewX(-18deg);opacity:0}.mb:hover::after,.cert:hover::after,.proj:hover::after{animation:sweep .9s ease}@keyframes sweep{from{left:-70%;opacity:1}to{left:130%;opacity:1}}.mb{transition:transform .25s ease}@media(prefers-reduced-motion:reduce){.mb,.cert,.proj{animation:none}}
+.contact{display:grid;grid-template-columns:1fr 1.3fr;gap:2.5rem}
+@media(max-width:820px){.contact{grid-template-columns:1fr}}
+.contact ul{list-style:none}.contact li{padding:10px 0;border-bottom:1px solid var(--gra);color:var(--tx2)}.contact li a{color:var(--tx);text-underline-offset:4px;word-break:break-word}
+form{display:grid;gap:1rem}
+label{font-size:.85rem;color:var(--tx2);display:grid;gap:6px}
+input,textarea{background:var(--char);border:1px solid var(--steel);border-radius:8px;padding:12px 14px;color:var(--tx);font:inherit}
+input:focus,textarea:focus{outline:none;border-color:var(--ti)}
+button.btn{cursor:pointer;font:inherit;font-weight:600}
+#fm{font-size:.9rem;min-height:1.4em}
+footer{border-top:1px solid var(--steel);padding:2rem 0;text-align:center;color:var(--mu);font-size:.85rem}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.proj{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap bar">
+<a class="logo" href="#home" aria-label="Muhammad Ramzan"><span>Muhammad Ramzan</span></a>
+<button class="burger" id="bg" aria-label="Open menu" aria-expanded="false" aria-controls="nv">☰</button>
+<nav id="nv" aria-label="Main"><ul>
+<li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li>
+</ul></nav></div></header>
+
+<main id="main">
+<section id="home"><div class="sym" aria-hidden="true"><i>∑</i><i>∫</i><i>π</i><i>√</i><i>∞</i><i>Δ</i></div><div class="wrap hero">
+<div>
+<p class="kicker" id="rot" aria-live="off">Mathematician</p>
+<h1>MUHAMMAD RAMZAN</h1>
+<p class="tag">Where Mathematics Meets Technology.</p>
+<p class="intro">Mathematician, Data Analyst and Software Developer from Multan, at Bahauddin Zakariya University. I build data analyses, machine learning models and AI-powered web apps with Python and JavaScript.</p>
+<div class="btns"><a class="btn p" href="#projects">Explore projects</a><a class="btn s" href="#contact">Contact me</a></div>
+<p class="links"><a href="https://github.com/Rztech15" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/muhammad-ramzan-a91510423" target="_blank" rel="noopener">LinkedIn</a></p>
+</div>
+<div id="stage" aria-hidden="true"><div class="fallback"></div></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+<h2 class="rv">About</h2>
+<div class="about rv">
+<div>
+<p>I am a <strong>Mathematician</strong> at Bahauddin Zakariya University who turns raw data into clear insight and ideas into working software. I lead <strong>Future Builders</strong>, a group working on AI, code and software projects, and I run <strong>RZ Commerce</strong>, my own online store.</p>
+<p>Mathematics trains me to break a problem into assumptions, structure and proof. I apply the same habit to code: models like linear regression and gradient descent become programs I can test, and messy datasets become dashboards people can act on.</p>
+<p>My research on the financial data of Pakistan's top companies was presented at <strong>FICPFSIT-2026</strong>. I am open to internships, freelance work and collaboration.</p>
+</div>
+<div class="card mb"><h3>Research interests</h3><div class="chips"><span>Complex Analysis</span><span>Operator Theory</span><span>Topological Dynamics</span><span>Abstract Algebra</span><span>Linear Regression</span><span>Data Visualization</span><span>Numerical Methods</span></div>
+<h3 style="margin-top:1.4rem">Languages</h3><p style="color:var(--tx2);font-size:.92rem">English (professional working), Urdu (native)</p></div>
+</div></div></section>
+
+<section id="skills"><div class="wrap">
+<h2 class="rv">Technical skills</h2>
+<p class="lead rv">Tools I have used in my projects, grouped by what they do.</p>
+<div class="grid rv">
+<div class="card"><h3>Mathematics and analytical tools</h3><div class="chips"><span>Linear Algebra</span><span>Probability &amp; Statistics</span><span>Numerical Analysis</span><span>Maple</span></div></div>
+<div class="card"><h3>Programming and backend</h3><div class="chips"><span>Python</span><span>JavaScript</span><span>SQL / MySQL</span><span>Supabase</span></div></div>
+<div class="card"><h3>Data analytics</h3><div class="chips"><span>pandas</span><span>NumPy</span><span>Matplotlib</span><span>Excel dashboards</span><span>Pivot Tables &amp; Power Query</span></div></div>
+<div class="card"><h3>Artificial intelligence</h3><div class="chips"><span>Machine Learning</span><span>Scikit-learn</span><span>Gradient descent from scratch</span><span>Gemini API</span></div></div>
+<div class="card"><h3>Web development</h3><div class="chips"><span>HTML / CSS</span><span>React</span><span>Next.js</span><span>PWA</span></div></div>
+<div class="card"><h3>Software development tools</h3><div class="chips"><span>Git &amp; GitHub</span><span>Jupyter Notebook</span><span>Vercel</span><span>GitHub Pages</span></div></div>
+</div></div></section>
+
+<section id="projects"><div class="wrap">
+<h2 class="rv">Featured projects</h2>
+<p class="lead rv">Live applications with source code. Hover a card to see it lift.</p>
+<div class="grid spatial rv">
+<article class="card proj feat"><h3>FinSight AI</h3>
+<p>An AI-powered financial intelligence platform that turns financial data into business insights to support better financial decisions.</p>
+<div class="chips"><span>AI</span><span>Financial analysis</span><span>Vercel</span></div>
+<div class="l"><a href="https://finsight-ai-mrzb.vercel.app/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Rztech15/FinSight-AI" target="_blank" rel="noopener">GitHub</a></div></article>
+
+<article class="card proj"><h3>RZ Data Analytics AI Agent</h3>
+<p>Upload a CSV, Excel or JSON file to get instant dashboards, anomaly detection and an AI analyst that answers across the whole dataset, with SQL and report generation. Installable as a PWA.</p>
+<div class="chips"><span>Gemini AI</span><span>Supabase</span><span>JavaScript</span><span>PWA</span></div>
+<div class="l"><a href="https://rz-data-analytics-ai-agent.vercel.app/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Rztech15/RZ-DATA-ANALYTICS-AI-AGENT" target="_blank" rel="noopener">GitHub</a></div></article>
+
+<article class="card proj"><h3>StockFlow</h3>
+<p>Inventory and stock management software for small businesses: products, stock movement and business records, with MySQL triggers that update stock and block overselling, plus a dashboard with low-stock alerts.</p>
+<div class="chips"><span>MySQL</span><span>HTML / CSS / JS</span><span>API</span></div>
+<div class="l"><a href="https://stock-flow-api-iota.vercel.app/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Rztech15/StockFlow" target="_blank" rel="noopener">GitHub</a></div></article>
+
+<article class="card proj"><h3>AI SkillBridge</h3>
+<p>A team project from Future Builders, where I was Backend Lead. It analyzes education, skills, interests and goals to build a personalized career roadmap.</p>
+<div class="chips"><span>Team project</span><span>Backend</span><span>Vercel</span></div>
+<div class="l"><a href="https://ai-skillbridge.vercel.app/" target="_blank" rel="noopener">Live demo</a></div></article>
+
+<article class="card proj"><h3>Linear Regression Model</h3>
+<p>Student marks prediction built from scratch with multivariate linear regression and gradient descent, without scikit-learn.</p>
+<div class="chips"><span>Python</span><span>NumPy</span></div>
+<div class="l"><a href="https://github.com/Rztech15/Linear-Regression-Student-Marks" target="_blank" rel="noopener">GitHub</a></div></article>
+
+<article class="card proj"><h3>Pakistani Companies Analysis</h3>
+<p>Excel financial dashboard of PSO, OGDCL, HBL, UBL, Meezan Bank and Lucky Cement, presented at FICPFSIT-2026.</p>
+<div class="chips"><span>Excel</span><span>Data visualization</span></div>
+<div class="l"><a href="https://github.com/Rztech15/Pakistan_Companies_Data_Analysis" target="_blank" rel="noopener">GitHub</a></div></article>
+
+<article class="card proj"><h3>RZ Commerce</h3>
+<p>A skincare store with a product slider, cart and WhatsApp checkout. Fully responsive.</p>
+<div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+<div class="l"><a href="https://rztech15.github.io/RZ-Commerce/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Rztech15/RZ-Commerce" target="_blank" rel="noopener">GitHub</a></div></article>
+</div></div></section>
+
+<section id="experience"><div class="wrap">
+<h2 class="rv">Experience and leadership</h2>
+<div class="tl rv" style="margin-top:2rem">
+<div class="card"><h3>Executive Member, ZGDC (Google Developer Club)</h3><p class="meta">Currently</p><ul class="pts"><li>Currently serving as an executive member, working in recruitment</li></ul></div>
+<div class="card"><h3>Group Lead, Future Builders</h3><p class="meta">2026 – Present</p><ul class="pts"><li>Lead a group working on AI, coding, software development and team projects</li><li>Backend Lead on AI SkillBridge</li><li>Certificate of Appreciation from the Department of Mathematics, BZU Multan</li></ul></div>
+<div class="card"><h3>Founder and E-Commerce Manager, RZ Commerce</h3><p class="meta">2025 – Present</p><ul class="pts"><li>Design, build and run an online skincare store from storefront to checkout</li><li>Manage listings, orders and WhatsApp-based order handling</li></ul></div>
+<div class="card"><h3>Data Analyst and Python Developer, Independent</h3><p class="meta">2024 – Present · CASPAM, BZU Multan</p><ul class="pts"><li>Analyzed financial data of Pakistan's top 6 companies for FICPFSIT-2026</li><li>Built a student marks prediction model with gradient descent from scratch</li><li>Created interactive Excel dashboards with KPIs and charts</li></ul></div>
+</div></div></section>
+
+<section id="education"><div class="wrap">
+<h2 class="rv">Education</h2>
+<div class="grid rv" style="margin-top:2rem">
+<div class="card"><h3>BS Mathematics</h3><p class="meta">2024 – 2028 (expected)</p><p style="color:var(--tx2);font-size:.92rem">CASPAM, Department of Mathematics, Bahauddin Zakariya University, Multan. Coursework includes Linear Algebra, Real and Complex Analysis, Abstract Algebra, Topology, Differential Equations and Probability &amp; Statistics.</p></div>
+<div class="card"><h3>Intermediate, Pre-Engineering</h3><p class="meta">2024</p><p style="color:var(--tx2);font-size:.92rem">Government Science College Boys, Multan</p></div>
+<div class="card"><h3>Matriculation</h3><p class="meta">2022</p><p style="color:var(--tx2);font-size:.92rem">Government Comprehensive Higher Secondary School, Multan</p></div>
+</div>
+<p class="note rv">Add your current semester here once you confirm it.</p></div></section>
+
+<section id="achievements"><div class="wrap">
+<h2 class="rv">Achievements and certifications</h2>
+<p class="lead rv">Each card opens the original image on my existing portfolio site.</p>
+<div class="grid rv">
+<a class="card cert" href="https://rztech15.github.io/RZ-Portfolio-Website/FICPFIST-2026(1).jpeg" target="_blank" rel="noopener"><p class="meta">International conference</p><h3>FICPFSIT-2026 research poster</h3><p>Presented financial data analysis of Pakistan's top companies.</p></a>
+<a class="card cert" href="https://rztech15.github.io/RZ-Portfolio-Website/FICPFIST-2026(2).jpeg" target="_blank" rel="noopener"><p class="meta">International conference</p><h3>FICPFSIT-2026 participation</h3><p>Official participation recognition.</p></a>
+<a class="card cert" href="https://rztech15.github.io/RZ-Portfolio-Website/BZU%20Appreciation.jpeg" target="_blank" rel="noopener"><p class="meta">Department of Mathematics, BZU Multan</p><h3>Certificate of Appreciation, Backend Lead</h3><p>For developing AI SkillBridge with Team Future Builders.</p></a>
+<a class="card cert" href="https://rztech15.github.io/RZ-Portfolio-Website/Code%20Meet.jpeg" target="_blank" rel="noopener"><p class="meta">Technology seminar</p><h3>Code Meet seminar</h3><p>Participation in a seminar on coding and software development.</p></a>
+<div class="card cert"><p class="meta">HarvardX · edX</p><h3>CS50 Introduction to Computer Science</h3><p style="color:var(--tx2);font-size:.85rem">Self-paced learning milestone, not an official certificate.</p></div>
+<div class="card cert"><p class="meta">Alison</p><h3>Business Analytics</h3><p style="color:var(--tx2);font-size:.85rem">Self-paced learning milestone, not an official certificate.</p></div>
+</div>
+<p class="btns rv" style="margin-top:2rem"><a class="btn s" href="https://rztech15.github.io/RZ-Portfolio-Website/Muhammad_Ramzan_CV.pdf" target="_blank" rel="noopener">View CV (PDF)</a></p></div></section>
+
+<section id="contact"><div class="wrap">
+<h2 class="rv">Contact</h2>
+<p class="lead rv">Open to internships, freelance projects and collaboration.</p>
+<div class="contact rv">
+<ul>
+<li>Email: <a href="mailto:ramzanbalochmrbaloch@gmail.com">ramzanbalochmrbaloch@gmail.com</a></li>
+<li>WhatsApp: <a href="https://wa.me/923207895540" target="_blank" rel="noopener">0320-7895540</a></li>
+<li>Location: Multan, Pakistan</li>
+<li><a href="https://github.com/Rztech15" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/muhammad-ramzan-a91510423" target="_blank" rel="noopener">LinkedIn</a></li>
+</ul>
+<form id="cf">
+<label>Your name<input name="name" autocomplete="name" required></label>
+<label>Email<input type="email" name="email" autocomplete="email" required></label>
+<label>Message<textarea name="message" rows="5" required></textarea></label>
+<button class="btn p" id="sb" type="submit">Send message</button>
+<div id="fm" role="status" aria-live="polite"></div>
+</form></div></div></section>
+</main>
+<footer><div class="wrap">© 2026 Muhammad Ramzan · Multan, Pakistan</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// mobile nav
+var bg=document.getElementById('bg'),nv=document.getElementById('nv');
+bg.onclick=function(){var o=nv.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.textContent=o?'✕':'☰'};
+nv.addEventListener('click',function(e){if(e.target.tagName==='A'){nv.classList.remove('open');bg.setAttribute('aria-expanded','false');bg.textContent='☰'}});
+// reveal
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+// rotating role text
+var roles=['Mathematician','Data Analyst','Python Developer','Software Developer'],ri=0,rot=document.getElementById('rot');
+if(!RM)setInterval(function(){ri=(ri+1)%roles.length;rot.style.opacity=0;setTimeout(function(){rot.textContent=roles[ri];rot.style.opacity=1},250)},2600);
+rot.style.transition='opacity .25s';
+// spatial cards
+if(!RM&&matchMedia('(hover:hover)').matches)document.querySelectorAll('.proj,.cert,.mb').forEach(function(c){
+c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.setProperty('--mx',(x+.5)*100+'%');c.style.setProperty('--my',(y+.5)*100+'%');});
+c.addEventListener('pointerleave',function(){c.style.transform=''})});
+// 3D hero
+var st=document.getElementById('stage');
+try{
+if(RM||!window.THREE)throw 0;
+var mob=innerWidth<820,r=new THREE.WebGLRenderer({antialias:!mob,alpha:true});
+r.setPixelRatio(Math.min(devicePixelRatio,mob?1.5:2));st.appendChild(r.domElement);st.querySelector('.fallback').remove();
+var s=new THREE.Scene(),cam=new THREE.PerspectiveCamera(40,1,.1,50);cam.position.z=6;
+var m=new THREE.MeshStandardMaterial({color:0xAEB6BD,metalness:1,roughness:.22});
+var g=new THREE.Group();
+g.add(new THREE.Mesh(new THREE.TorusKnotGeometry(1.15,.34,mob?120:220,mob?16:32,2,3),m));
+var w=new THREE.Mesh(new THREE.IcosahedronGeometry(2.1,1),new THREE.MeshBasicMaterial({color:0x41454B,wireframe:true,transparent:true,opacity:.55}));g.add(w);
+s.add(g);
+s.add(new THREE.AmbientLight(0x6b7078,.8));
+var k=new THREE.DirectionalLight(0xffffff,2.2);k.position.set(4,4,5);s.add(k);
+var f=new THREE.PointLight(0xE1E5E9,1.6,20);f.position.set(-4,-2,3);s.add(f);
+var p=null;if(!mob){var n=140,a=new Float32Array(n*3);for(var i=0;i<n*3;i++)a[i]=(Math.random()-.5)*8;var pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(a,3));p=new THREE.Points(pg,new THREE.PointsMaterial({color:0xAEB6BD,size:.025,transparent:true,opacity:.6}));s.add(p)}
+var mx=0,my=0,tx=0,ty=0,on=true;
+function size(){var w=st.clientWidth;r.setSize(w,w,false);cam.updateProjectionMatrix()}
+size();addEventListener('resize',size);
+addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+new IntersectionObserver(function(e){on=e[0].isIntersecting}).observe(st);
+(function loop(t){requestAnimationFrame(loop);if(!on||document.hidden)return;
+tx+=(mx-tx)*.05;ty+=(my-ty)*.05;
+g.rotation.y=t*.00018+tx*1.2;g.rotation.x=t*.00009+ty*.9;w.rotation.y=-t*.0001;if(p)p.rotation.y=t*.00003;
+r.render(s,cam)})(0);
+}catch(e){}
+// form
+var cf=document.getElementById('cf'),fm=document.getElementById('fm'),sb=document.getElementById('sb');
+cf.addEventListener('submit',function(e){e.preventDefault();sb.disabled=true;sb.textContent='Sending…';
+fetch('https://formspree.io/f/mlgyrvov',{method:'POST',body:new FormData(cf),headers:{Accept:'application/json'}}).then(function(x){
+if(!x.ok)throw 0;fm.textContent='Message sent. I will reply as soon as I can.';cf.reset()}).catch(function(){
+fm.textContent='Message not sent. Email ramzanbalochmrbaloch@gmail.com instead.'}).finally(function(){sb.disabled=false;sb.textContent='Send message'})});
+})();
+</script>
+</body>
+</html>
