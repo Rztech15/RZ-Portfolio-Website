@@ -45,7 +45,7 @@ nav a{color:var(--tx2);text-decoration:none;font-size:.9rem;font-weight:500;tran
 .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
 #stage{position:relative;aspect-ratio:1;width:100%;max-width:480px;margin-left:auto}
 #stage canvas{width:100%!important;height:100%!important;display:block}
-#stage:empty{display:none}.heroR{position:relative;display:grid;place-items:center}.heroR #stage{position:absolute;left:50%;top:50%;width:118%;max-width:none;margin:0;transform:translate(-50%,-50%)}.ph.hp{width:min(280px,100%);aspect-ratio:4/5;margin:0;border-radius:16px;z-index:1}.plogo{height:40px;width:auto;max-width:120px;object-fit:contain;align-self:flex-start;margin-bottom:1rem;border-radius:8px}.ph{position:relative;aspect-ratio:4/3;border-radius:10px;overflow:hidden;margin-bottom:1.2rem;background:rgba(255,255,255,.04);border:1px dashed var(--steel);display:flex;align-items:center;justify-content:center;color:var(--mu);font-size:.85rem}.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#stage:empty{display:none}.heroR{position:relative;display:grid;place-items:center}.heroR #stage{position:absolute;left:50%;top:50%;width:118%;max-width:none;margin:0;transform:translate(-50%,-50%)}.ph.hp{width:min(280px,100%);aspect-ratio:4/5;margin:0;border-radius:16px;z-index:1}.plogo{height:56px;width:auto;max-width:180px;object-fit:contain;align-self:flex-start;margin-bottom:1rem;border-radius:8px}.ph{position:relative;aspect-ratio:4/3;border-radius:10px;overflow:hidden;margin-bottom:1.2rem;background:rgba(255,255,255,.04);border:1px dashed var(--steel);display:flex;align-items:center;justify-content:center;color:var(--mu);font-size:.85rem}.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .kicker{color:var(--ti);font-weight:600;margin-bottom:1rem;min-height:1.7em}.hero{position:relative;z-index:1}.sym{position:absolute;inset:0;pointer-events:none}.sym i{position:absolute;font:700 clamp(2.2rem,6vw,4.5rem) Manrope;font-style:normal;color:var(--ti);opacity:.08;animation:fl 14s ease-in-out infinite}.sym i:nth-child(1){left:6%;top:18%}.sym i:nth-child(2){left:44%;top:12%;animation-delay:-3s}.sym i:nth-child(3){left:88%;top:22%;animation-delay:-6s}.sym i:nth-child(4){left:12%;top:78%;animation-delay:-9s}.sym i:nth-child(5){left:52%;top:84%;animation-delay:-4s}.sym i:nth-child(6){left:82%;top:74%;animation-delay:-11s}@keyframes fl{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-26px) rotate(8deg)}}@media(prefers-reduced-motion:reduce){.sym i{animation:none}}
 h1{font-size:clamp(2.6rem,7.5vw,5.4rem);line-height:1.02;font-weight:800;letter-spacing:-.02em;background:linear-gradient(110deg,transparent 42%,rgba(255,255,255,.9) 50%,transparent 58%) 0 0/250% 100% no-repeat,var(--metal);-webkit-background-clip:text;background-clip:text;color:var(--sw);-webkit-text-fill-color:transparent;margin-bottom:1rem;filter:drop-shadow(0 2px 0 #555a61) drop-shadow(0 4px 0 #41454B) drop-shadow(0 10px 14px rgba(0,0,0,.65));animation:shine 6s ease-in-out infinite}@media(prefers-reduced-motion:reduce){h1{animation:none}}
 .tag{font:700 1.25rem Manrope;margin-bottom:1rem}
@@ -149,7 +149,7 @@ footer{border-top:1px solid var(--steel);padding:2rem 0;text-align:center;color:
 <p class="lead rv">Live applications with source code built on mathematical thinking</p>
 <div class="flt rv" role="group" aria-label="Filter projects"><button class="f on" data-f="all">All</button><button class="f" data-f="ai">AI</button><button class="f" data-f="data">Data</button><button class="f" data-f="web">Web</button></div>
 <div class="grid spatial rv">
-<article class="card proj feat"><img class="shot" src="screenshots/finsight.png" alt="FinSight AI screenshot" loading="lazy" onerror="this.remove()"><img class="plogo" src="aegis-logo.png" alt="FinSight AI logo" onerror="this.remove()"><h3>FinSight AI</h3>
+<article class="card proj feat"><img class="shot" src="screenshots/finsight.png" alt="FinSight AI screenshot" loading="lazy" onerror="this.remove()"><img class="plogo" src="finsight-logo.png" alt="FinSight AI logo" onerror="this.remove()"><h3>FinSight AI</h3>
 <p>An AI-powered financial intelligence platform that turns financial data into business insights to support better financial decisions.</p>
 <div class="chips"><span>AI</span><span>Financial analysis</span><span>Vercel</span></div>
 <div class="l"><a href="https://finsight-ai-mrzb.vercel.app/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Rztech15/FinSight-AI" target="_blank" rel="noopener">GitHub</a></div></article>
@@ -164,22 +164,22 @@ footer{border-top:1px solid var(--steel);padding:2rem 0;text-align:center;color:
 <div class="chips"><span>MySQL</span><span>HTML / CSS / JS</span><span>API</span></div>
 <div class="l"><a href="https://stock-flow-api-iota.vercel.app/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Rztech15/StockFlow" target="_blank" rel="noopener">GitHub</a></div></article>
 
-<article class="card proj"><img class="shot" src="screenshots/skillbridge.png" alt="AI SkillBridge screenshot" loading="lazy" onerror="this.remove()"><h3>AI SkillBridge</h3>
+<article class="card proj"><img class="shot" src="screenshots/skillbridge.png" alt="AI SkillBridge screenshot" loading="lazy" onerror="this.remove()"><img class="plogo" src="skillbridge-logo.png" alt="AI SkillBridge logo" onerror="this.remove()"><h3>AI SkillBridge</h3>
 <p>A team project from Future Builders, where I was Backend Lead. It analyzes education, skills, interests and goals to build a personalized career roadmap.</p>
 <div class="chips"><span>Team project</span><span>Backend</span><span>Vercel</span></div>
 <div class="l"><a href="https://ai-skillbridge.vercel.app/" target="_blank" rel="noopener">Live demo</a></div></article>
 
-<article class="card proj"><h3>Linear Regression Model</h3>
+<article class="card proj"><img class="shot" src="regression-visualization.jpg" alt="Linear Regression gradient descent step by step visualization" loading="lazy" onerror="this.remove()"><h3>Linear Regression Model</h3>
 <p>Student marks prediction built from scratch with multivariate linear regression and gradient descent, without scikit-learn.</p>
 <div class="chips"><span>Python</span><span>NumPy</span></div>
 <div class="l"><a href="https://github.com/Rztech15/Linear-Regression-Student-Marks" target="_blank" rel="noopener">GitHub</a></div></article>
 
-<article class="card proj"><h3>Pakistani Companies Analysis</h3>
+<article class="card proj"><img class="shot" src="pakistan-dashboard.jpg" alt="Pakistan top companies Excel dashboard" loading="lazy" onerror="this.remove()"><h3>Pakistani Companies Analysis</h3>
 <p>Excel financial dashboard of PSO, OGDCL, HBL, UBL, Meezan Bank and Lucky Cement, presented at FICPFSIT-2026.</p>
 <div class="chips"><span>Excel</span><span>Data visualization</span></div>
 <div class="l"><a href="https://github.com/Rztech15/Pakistan_Companies_Data_Analysis" target="_blank" rel="noopener">GitHub</a></div></article>
 
-<article class="card proj"><img class="shot" src="screenshots/rz-commerce.png" alt="RZ Commerce screenshot" loading="lazy" onerror="this.remove()"><h3>RZ Commerce</h3>
+<article class="card proj"><img class="shot" src="screenshots/rz-commerce.png" alt="RZ Commerce screenshot" loading="lazy" onerror="this.remove()"><img class="plogo" src="rz-commerce-logo.png" alt="RZ Commerce logo" onerror="this.remove()"><h3>RZ Commerce</h3>
 <p>A skincare store with a product slider, cart and WhatsApp checkout. Fully responsive.</p>
 <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
 <div class="l"><a href="https://rztech15.github.io/RZ-Commerce/" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Rztech15/RZ-Commerce" target="_blank" rel="noopener">GitHub</a></div></article>
