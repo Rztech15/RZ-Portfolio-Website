@@ -32,7 +32,7 @@
     certs: { t: "Conference: FICPFSIT-2026 research poster and participation, a Certificate of Appreciation from the Department of Mathematics, BZU Multan, and the Code Meet seminar. Courses: HarvardX CS50 Introduction to Computer Science and Alison Business Analytics, which are personal learning milestones, not official certificates.", l: [["Achievements section", "#achievements"]] },
     cv: { t: "You can download Ramzan's CV as a PDF.", l: [L.cv] },
     contact: { t: "Email: ramzanbalochmrbaloch@gmail.com. Phone and WhatsApp: 0320-7895540. Based in Multan, Pakistan. You can also use the contact form on this page.", l: [L.mail, L.wa, L.li, L.gh, ["Contact form", "#contact"]] },
-    open: { t: "Ramzan is open to internships, work opportunities, freelance projects, and collaborations.", l: [L.mail, ["Contact form", "#contact"]] },
+    open: { t: "Ramzan is currently building AI and data products with Future Builders and welcomes collaborations and project discussions.", l: [L.mail, ["Contact form", "#contact"]] },
     fallback: { t: "I can only answer questions about Muhammad Ramzan's portfolio: projects, skills, experience, education, certificates, CV, and contact. Try one of the topics below, or use the contact form for anything else.", l: [["Contact form", "#contact"]] }
   };
   var RULES = [
@@ -65,7 +65,7 @@
   if (typeof module !== "undefined") module.exports = api;
   if (typeof document === "undefined") return;
 
-  var CHIPS = [["Projects", "projects"], ["Skills", "skills"], ["Experience", "experience"], ["Education", "education"], ["Certificates", "certs"], ["Open to work?", "open"], ["CV", "cv"], ["Contact", "contact"]];
+  var CHIPS = [["Projects", "projects"], ["Skills", "skills"], ["Experience", "experience"], ["Education", "education"], ["Certificates", "certs"], ["Collaborate", "open"], ["CV", "cv"], ["Contact", "contact"]];
   var METAL = "linear-gradient(135deg,#E1E5E9,#AEB6BD 55%,#8A9299)";
   var css = ".rza-btn{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:150;background:rgba(31,31,35,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#E1E5E9;border:0;border-radius:12px;padding:12px 20px;font:600 .9rem Inter,sans-serif;letter-spacing:.02em;cursor:pointer;box-shadow:0 10px 28px rgba(0,0,0,.5)}" +
     ".rza-panel{position:fixed;right:16px;bottom:calc(72px + env(safe-area-inset-bottom,0px));z-index:150;width:340px;max-width:calc(100vw - 32px);height:460px;max-height:calc(100vh - 110px);display:flex;flex-direction:column;background:rgba(31,31,35,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#F8FAFC;border:1px solid #41454B;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.55);font:400 .88rem/1.5 Inter,sans-serif}" +
